@@ -15,21 +15,21 @@ const Header = () => {
     return(
       <nav id="navbar-main" class="navbar shadow bg-dark  p-1 ">
         <div class="navbar-brand">
-          <a class="navbar-item is-hidden-desktop jb-aside-mobile-toggle">
+        <Link class="navbar-item main-title hvr-underline-from-center" to='/'>
+    <h3 className='text-title is-title is-size-4 is-bold main-title '>{value.data.site_title == null ? 'Your Website name' : value.data.site_title}</h3>
+    </Link>
+        </div>
+        <div class="navbar-brand is-right">
+        <a class="navbar-item is-hidden-desktop jb-aside-mobile-toggle">
             <span class="icon"><i class="fa fa-bars is-bold text-white" aria-hidden="true"></i></span>
           </a>
         </div>
-        <div class="navbar-brand is-right">
-          <a class="navbar-item is-hidden-desktop jb-navbar-menu-toggle" data-target="navbar-menu">
-            <span class="icon"><i class="mdi mdi-dots-vertical"></i></span>
-          </a>
-        </div>
+        
         <div class="navbar-menu fadeIn animated faster" id="navbar-menu">
           <div class="navbar-end">
             <div class="navbar-item has-dropdown has-dropdown-with-icons has-divider has-user-avatar is-hoverable">
               <a class="navbar-link is-arrowless">
                 <div class="is-user-avatar">
-     
                   <img src={value.data.avatar === '' ? akun : value.data.avatar } alt="John Doe" />
                 </div>
                 <div class="is-user-name text-title"><span>{value.data.username}</span></div>

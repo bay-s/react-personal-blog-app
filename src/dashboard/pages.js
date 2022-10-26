@@ -26,7 +26,7 @@ const Pages = (props) => {
 <>
 <div className='box shadow is-flex align-center is-flex-gap-md  bg-dark'>
 <h3 className='is-bold is-title is-size-4 text-title'>Pages</h3>
-<Link to='/dashboard/create-page/' className='button is-outlined is-info is-small'>Add New</Link>
+<Link to='/dashboard/create-page/' className='button hvr-sweep-to-right is-outlined border-primary bg-transparent text-title is-small'>Add New</Link>
 </div>
 
 {/* start table */}

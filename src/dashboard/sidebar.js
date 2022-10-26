@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
 
     return(
-        <aside class=" h-100 ">
+        <aside class=" h-100 home-sidebar">
         <div class="p-3 text-center mx-auto is-centered">
             <Link to='/' className='has-text-white is-title is-bold text-center'>View Site</Link>
         </div>

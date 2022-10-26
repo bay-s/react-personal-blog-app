@@ -23,15 +23,15 @@ useEffect(() => {
 
 
 const menuList = menus.map(menus => {
-  return menus.menu_item.map(menu => {
-   return  <li key={menus.id} className='hvr-underline-from-center p-3'><Link to={`/${menu}`} className=' has-text-white'>{menu}</Link></li>
+  return menus.menu_item.map((menu ,index)=> {
+   return  <li key={index} className='hvr-underline-from-center p-3'><Link to={`/${menu}`} className=' has-text-white'>{menu}</Link></li>
   })
 })
     return(
-<header className='headers p-2 '>
+<header className='headers p-2'>
 <nav class="navbar mx-5 is-flex  align-center justify-between bg-transparent container" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <Link class="navbar-item main-title " to='/'>
+    <Link class="navbar-item main-title hvr-underline-from-center" to='/'>
     <h3 className='text-title is-title is-size-4 is-bold main-title '>{value.data.site_title == null ? 'Your Website name' : value.data.site_title}</h3>
     </Link>
 

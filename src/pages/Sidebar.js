@@ -22,11 +22,11 @@ const Sidebar = () => {
 
     const categories = category.length < 1 ? "" : category.map(cats => {
       return <li className='list-item border-butt p-2'>
-      <Link to={`/post-category/${cats.category}`} className='text-white'>{cats.category}</Link>
+      <Link to={`/posts/category-name/${cats.category}`} className='text-white'>{cats.category}</Link>
      </li>
     }) 
     return(
- <aside className='is-flex is-flex-column is-flex-gap-lg '>
+ <aside className='is-flex is-flex-column is-flex-gap-lg home-sidebar'>
 
 <div class="field py-3">
   <div class="control has-icons-left has-icons-right">

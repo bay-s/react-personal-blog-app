@@ -9,7 +9,7 @@ import { AppContext } from '../App';
 import EditPageSidebar from './edit-page-sidebar';
 import module from './quill-modules';
 
-const CreatePage = (props) => {
+const  CreatePageCopy = (props) => {
     const {value} = useContext(AppContext)
     const [isSave,setIsSave] = useState(false)
     const [message,setMessage] = useState({
@@ -129,4 +129,4 @@ const CreatePage = (props) => {
     )
 }
 
-export default CreatePage;
+export default CreatePageCopy;

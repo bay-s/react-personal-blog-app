@@ -36,7 +36,7 @@ const Home = () => {
     return(
      <>
       <Headers />
-    <div className='container is-fluid is-max-widescreen my-5 post'>
+ <div className='container is-fluid is-max-widescreen my-5 post'>
     <article className='columns is-multilne'>
         <div className='column is-3 box bg-dark'>
             <Sidebar />

@@ -13,6 +13,7 @@ import PostDetail from "./pages/post"
 import EditPost from "./dashboard/edit-post"
 import EditPage from "./dashboard/edit-page"
 import GetPost from "./dashboard/get-post-by"
+import PostByCategory from "./pages/post-by-category"
 
 
 export const AppContext = createContext()
@@ -107,6 +108,7 @@ function App() {
       <Route path='/dashboard/edit-page/:id' element={isLogin ? <EditPage /> : <LoginPage />} />
       <Route path='/:id' element={<Pages />} />
       <Route path='/post/category-name/:id' element={<GetPost />} />
+      <Route path='/posts/category-name/:id' element={<PostByCategory />} />
       <Route path='*' element={<NotFound />} />
       <Route path='/login/' element={<LoginPage  />} />
       <Route path='/register/' element={<RegisterPages  />} />

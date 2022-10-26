@@ -5,6 +5,7 @@ import UploadMedia from './upload-media'
 
 const EditPageSidebar = (props) => {
    const [active,setActive] = useState(false)
+   
    const openCollapse = (e) => {
     e.preventDefault()
     const collapse= e.target.parentElement.parentElement
