@@ -1,0 +1,57 @@
+import React, { useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
+import { AppContext } from '../App';
+import supabase from '../supabase-config';
+
+
+const Headers = () => {
+const {value} = useContext(AppContext);
+const [menus,setMenus] = useState([])
+console.log(value);
+useEffect(() => {
+  const fetchMenu = async () => {
+    const { data, error } = await supabase
+    .from('menu')
+    .select()
+    if(data){
+      setMenus(data)
+    }if(error) console.log(error);
+     }
+     fetchMenu()
+
+},[])
+
+
+const menuList = menus.map(menus => {
+  return menus.menu_item.map(menu => {
+   return  <li key={menus.id} className='hvr-underline-from-center p-3'><Link to={`/${menu}`} className=' has-text-white'>{menu}</Link></li>
+  })
+})
+    return(
+<header className='headers p-2 '>
+<nav class="navbar mx-5 is-flex  align-center justify-between bg-transparent container" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <Link class="navbar-item " to='/'>
+      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+    </Link>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+     <ul className='is-flex  is-flex-gap-xl'>
+        {menuList}
+        <li className={value.isLogin ? 'hvr-underline-from-center p-3' : 'hide'}><Link to='/dashboard/index' className=' has-text-white'>Dashboard</Link></li>
+     </ul>
+
+</nav>
+</header>
+    )
+}
+
+export default Headers;
+
+
