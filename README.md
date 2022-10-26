@@ -1,4 +1,4 @@
-# React Supabase 
+# React Blog App with Supabase 
 
 **How to run the starter project:**
 
