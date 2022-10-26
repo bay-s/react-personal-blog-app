@@ -5,7 +5,7 @@ const Main = (props) => {
   const {value} = useContext(AppContext);
 console.log(value);
     return(
-        <div className='columns'>
+   <div className='columns'>
         <div className='column is-4 '>
         <div class="tile is-child box  bg-dark ">
         <div class="level-item has-text-centered ">

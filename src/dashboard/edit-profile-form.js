@@ -14,13 +14,15 @@ const [message,setMessage] = useState({
 })
 const [datas,setDatas] = useState({
   username:'',
-  fullname:''
+  fullname:'',
+  website_name:''
 })
-
+console.log(value);
 useEffect(() => {
   setDatas({...datas,
      username:value.data.username,
-     fullname:value.data.fullname
+     fullname:value.data.fullname,
+     website_name:value.data.site_title
     })
 },[])
 const handlerChange = (e) => {
@@ -50,7 +52,8 @@ console.log(value);
   .from('users')
   .update({
      username:datas.username,
-     fullname:datas.fullname
+     fullname:datas.fullname,
+     site_title:datas.website_name
     })
   .eq('id',value.data.id)
   .select()
@@ -71,7 +74,7 @@ console.log(value);
   }
 }
     return(
- <div className='p-3 text-white bg-dark'>
+ <div className='px-5 text-white bg-dark py-2'>
 <UploadAvatar id={value.data.uid} data={value.data}/>
 {/* END UPLOAD INPUT */}
 <form className='is-flex is-flex-direction-column is-flex-gap-lg ' onSubmit={updateProfiles}>
@@ -86,6 +89,13 @@ console.log(value);
 <label class="label text-white">Username</label>
 <div class="control">
 <input class="input  is-link" type="text" name='username' defaultValue={value.data.username} onChange={ handlerChange }/>
+</div>
+</div>
+
+<div class="field">
+<label class="label text-white">Site title</label>
+<div class="control">
+<input class="input  is-link" type="text" name='website_name' defaultValue={value.data.site_title} onChange={handlerChange}/>
 </div>
 </div>
 

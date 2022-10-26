@@ -60,7 +60,7 @@ return   <tr>
 </div> 
 </td>
 <td data-label="Created">
-  <small class="has-text-grey is-abbr-like is-size-7" title= {posts.created_at}>
+  <small class="has-text-grey is-abbr-like text-nowrap is-size-7" title= {posts.created_at}>
     {posts.created_at}
   </small>
 </td>

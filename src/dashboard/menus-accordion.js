@@ -15,7 +15,7 @@ const MenusAccordion = (props) => {
             <div className='is-flex align-center is-flex-gap-md'>
                 <button className='has-text-danger btn-transparent' onClick={props.removeMenu}>Remove</button>
                 <span className='has-text-info'>|</span>
-                <button className='has-text-info btn-transparent'>Cancel</button>
+                <button className='has-text-info btn-transparent' >Cancel</button>
               </div>
             </div>
             {/* END ACCORDION CONTENT */}

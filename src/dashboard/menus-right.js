@@ -77,7 +77,7 @@ const MenusRight= (props) => {
     }
   };
 
-  const createMenu = async (e) => {
+const createMenu = async (e) => {
     e.preventDefault()
     if(!names){
       alert("Input required")
@@ -97,8 +97,20 @@ const MenusRight= (props) => {
   if(error) alert(error.message)
   }
 
+  const deleteMenu = async (e) => {
+    e.preventDefault()
+    const id = parseInt(menuCheck.current.value )
+    if(window.confirm('Are you sure want to delete this menu ? ')){
+      const { error } = await supabase
+      .from('menu')
+      .delete()
+      .eq('id', id)
+      if(error) alert(`Something Wrong ${error.message}`)
+      else alert('Delete menus success')
+    }
+  }
     return(
-     <div className='box bg-dark w-100'>
+<div className='box bg-dark w-100'>
 <form className='mb-3'  onSubmit={createMenu}>
 <h3 className='is-bold is-title p-2 my-3 text-title'>
 Create Menus</h3>
@@ -143,7 +155,7 @@ Create Menus</h3>
             </ul>
         </div>
         <form className='is-flex justify-between align-center' onSubmit={ saveMenu}>
-            <span className='has-text-danger btn-transparent is-underlined is-size-6'>Delete</span>
+            <span className='has-text-danger btn-transparent is-underlined is-size-6 is-clickable' onClick={deleteMenu}>Delete</span>
             <button className='button is-info'>Save Menus</button>
         </form>
       </div>

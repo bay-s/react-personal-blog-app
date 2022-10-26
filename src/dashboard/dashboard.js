@@ -17,22 +17,22 @@ const string_id = id.toString().toLowerCase()
     return( 
 <div id="app">
 <Header />
-<div class="container is-fluid my-5 pt-3">
+<div class="container is-fluid my-5">
 <div className='columns is-multiline'>
 {/* START SIDEBAR */}
 <div className='column is-2 bg-dark'>
 <Sidebar />
 </div>
 {/* END SIDEBAR */}
-<div className='column'>
+<div className='column p-0 px-3'>
 <div className={string_id === 'index' ? 'box bg-dark shadow' : 'hide' }>
 <h3 className='is-bold is-title is-size-4 text-title capital'>{string_id === 
 'index' ? "Dashboard" : string_id}</h3>
 </div>
 {string_id === 'index' ?  <Main />  : ""}
-{string_id === 'posts' ?  <Posts />  : "tidak"}
-{string_id === 'pages' ?  <Page />  : "tidak"}
-{string_id === 'category' ?  <Category />  : "tidak"}
+{string_id === 'posts' ?  <Posts />  : ""}
+{string_id === 'pages' ?  <Page />  : ""}
+{string_id === 'category' ?  <Category />  : ""}
 {string_id === 'edit-profile' ? <EditProfile /> : ""}
 {string_id === 'menus' ? <Menus /> : ""}
 </div>

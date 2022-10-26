@@ -23,7 +23,7 @@ const MenusLeft = (props) => {
 
     return(
 
-<div className='box bg-transparent bg-dark column is-3'>
+<div className='box bg-dark column is-3'>
 <h3 className='is-bold is-title p-2 text-title'>Add menu items</h3>
 <section class="accordions">
 <article class="accordion is-active">
@@ -39,8 +39,8 @@ const MenusLeft = (props) => {
 return <li key={menu.id}>
   <label class="b-checkbox checkbox">
   <input type="checkbox"  value={menu.pages_title} data-id={menu.id} onChange={props.data.handlerChange} ref={props.data.checkContainer}/>
-  <span class="check is-size-7"></span>
-   <span className='px-2 is-size-7'>{menu.pages_title}</span>
+  <span class="check is-size-6"></span>
+   <span className='px-2 is-size-6'>{menu.pages_title}</span>
   </label>
   </li>
 })

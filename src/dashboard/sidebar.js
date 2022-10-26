@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
 
     return(
-        <aside class=" h-100">
+        <aside class=" h-100 ">
         <div class="p-3 text-center mx-auto is-centered">
             <Link to='/' className='has-text-white is-title is-bold text-center'>View Site</Link>
         </div>
@@ -18,8 +18,7 @@ const Sidebar = () => {
                 </Link>
             </li>
           </ul>
-          <p class="menu-label">Examples</p>
-          <ul class="menu-list">
+          <ul class="menu-list py-2">
             <li>
               <Link to='/dashboard/pages' class="has-icon">
                 <span class="icon has-update-mark"><i class="mdi mdi-table"></i></span>
@@ -51,21 +50,7 @@ const Sidebar = () => {
             </Link>
             </li>
           </ul>
-          <p class="menu-label">About</p>
-          <ul class="menu-list">
-            <li>
-              <a href="https://github.com/vikdiesel/admin-one-bulma-dashboard" target="_blank" class="has-icon">
-                <span class="icon"><i class="mdi mdi-github-circle"></i></span>
-                <span class="menu-item-label">GitHub</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://justboil.me/bulma-admin-template/free-html-dashboard/" class="has-icon">
-                <span class="icon"><i class="mdi mdi-help-circle"></i></span>
-                <span class="menu-item-label">About</span>
-              </a>
-            </li>
-          </ul>
+
         </div>
       </aside>
     )

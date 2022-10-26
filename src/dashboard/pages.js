@@ -6,17 +6,18 @@ import PagesList from './pages-list';
 
 const Pages = (props) => {
   const [post,setPost] = useState([])
-
+  const [totalPost,setTotalPost] = useState(0)
   useEffect(() => {
    fetchPost()
   },[])
  
   const fetchPost = async () => {
-   const { data, error } = await supabase
+    const { data, error ,count} = await supabase
    .from('pages')
-   .select()
+   .select('*', { count: 'exact' })
    if(data){
      console.log(data);
+     setTotalPost(count)
      setPost(data)
    }if(error) console.log(error.message);
   }
@@ -54,8 +55,9 @@ const Pages = (props) => {
               </tbody>
             </table>
           </div>
-          <div class="notification">
-            <div class="level">
+{/* PAGINATION */}
+{totalPost < 7 ? "" :
+<div class="level">
               <div class="level-left">
                 <div class="level-item">
                   <div class="buttons has-addons">
@@ -70,8 +72,9 @@ const Pages = (props) => {
                   <small>Page 1 of 3</small>
                 </div>
               </div>
-            </div>
-          </div>
+ </div>
+ }
+{/* END PAGINATION */}
         </div>
       </div>
     </div>

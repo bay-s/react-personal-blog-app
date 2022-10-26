@@ -31,8 +31,8 @@ const menuList = menus.map(menus => {
 <header className='headers p-2 '>
 <nav class="navbar mx-5 is-flex  align-center justify-between bg-transparent container" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <Link class="navbar-item " to='/'>
-      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+    <Link class="navbar-item main-title " to='/'>
+    <h3 className='text-title is-title is-size-4 is-bold main-title '>{value.data.site_title == null ? 'Your Website name' : value.data.site_title}</h3>
     </Link>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
