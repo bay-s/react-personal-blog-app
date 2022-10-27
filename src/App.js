@@ -102,17 +102,17 @@ function App() {
       <Routes>
       <Route path='/' element={<Home />} /> 
       <Route path='/post/:id' element={<PostDetail />} /> 
-      <Route path='/dashboard/:id' element={isLogin ? <DashBoard /> : <LoginPage />} />
-      <Route path='/dashboard/create-post/' element={isLogin ? <CreatePost /> : <LoginPage />} />
-      <Route path='/dashboard/create-page/' element={isLogin ? <CreatePageCopy /> : <LoginPage />} />
+      <Route path='/dashboard/:id' element={isLogin ? <DashBoard /> : <LoginPage  isLogin={isLogin}/>} />
+      <Route path='/dashboard/create-post/' element={isLogin ? <CreatePost /> : <LoginPage  isLogin={isLogin}/>} />
+      <Route path='/dashboard/create-page/' element={isLogin ? <CreatePageCopy /> : <LoginPage  isLogin={isLogin}/>} />
       {/* <Route path='/dashboard/create-page/' element={isLogin ? <CreatePage /> : <LoginPage />} /> */}
-      <Route path='/dashboard/edit-post/:id' element={isLogin ? <EditPost /> : <LoginPage />} />
-      <Route path='/dashboard/edit-page/:id' element={isLogin ? <EditPage /> : <LoginPage />} />
+      <Route path='/dashboard/edit-post/:id' element={isLogin ? <EditPost /> : <LoginPage  isLogin={isLogin}/>} />
+      <Route path='/dashboard/edit-page/:id' element={isLogin ? <EditPage /> : <LoginPage  isLogin={isLogin}/>} />
       <Route path='/:id' element={<Pages />} />
       <Route path='/post/category-name/:id' element={<GetPost />} />
       <Route path='/posts/category-name/:id' element={<PostByCategory />} />
       <Route path='*' element={<NotFound />} />
-      <Route path='/login/' element={<LoginPage  />} />
+      <Route path='/login/' element={<LoginPage isLogin={isLogin}/>} />
       <Route path='/register/' element={<RegisterPages  />} />
       </Routes>
 
