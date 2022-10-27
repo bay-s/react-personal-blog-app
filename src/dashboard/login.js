@@ -72,7 +72,7 @@ handlerChange = (e) => {
           sukses:true,
           pesan:"Login Sukses"
         })
-        window.location.href = "/dashboard/";
+        window.location.href = "/dashboard/main";
       }
 
   }
