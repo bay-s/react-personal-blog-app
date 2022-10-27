@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { createContext, useEffect, useState } from "react"
 import supabase from "./supabase-config"
 import DashBoard from "./dashboard/dashboard"
@@ -14,7 +14,7 @@ import EditPost from "./dashboard/edit-post"
 import EditPage from "./dashboard/edit-page"
 import GetPost from "./dashboard/get-post-by"
 import PostByCategory from "./pages/post-by-category"
-import CreatePageCopy from "./dashboard/create-page-backup"
+
 
 
 export const AppContext = createContext()
@@ -104,11 +104,10 @@ function App() {
       <Route path='/post/:id' element={<PostDetail />} /> 
       <Route path='/dashboard/:id' element={isLogin ? <DashBoard /> : <LoginPage  isLogin={isLogin}/>} />
       <Route path='/dashboard/create-post/' element={isLogin ? <CreatePost /> : <LoginPage  isLogin={isLogin}/>} />
-      <Route path='/dashboard/create-page/' element={isLogin ? <CreatePageCopy /> : <LoginPage  isLogin={isLogin}/>} />
-      {/* <Route path='/dashboard/create-page/' element={isLogin ? <CreatePage /> : <LoginPage />} /> */}
+      <Route path='/dashboard/create-page/' element={isLogin ? <CreatePage /> : <LoginPage  isLogin={isLogin}/>} />
       <Route path='/dashboard/edit-post/:id' element={isLogin ? <EditPost /> : <LoginPage  isLogin={isLogin}/>} />
       <Route path='/dashboard/edit-page/:id' element={isLogin ? <EditPage /> : <LoginPage  isLogin={isLogin}/>} />
-      <Route path='/:id' element={<Pages />} />
+      <Route path='/pages/:id' element={<Pages />} />
       <Route path='/post/category-name/:id' element={<GetPost />} />
       <Route path='/posts/category-name/:id' element={<PostByCategory />} />
       <Route path='*' element={<NotFound />} />

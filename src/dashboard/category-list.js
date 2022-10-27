@@ -34,6 +34,8 @@ const CategoryList = (props) => {
         }
          if(error) alert(`Something wrong ${error.message}`)
       }
+
+
     }
   
     const catList = category.length < 1 ? "" : category.map((cat,index) => {

@@ -24,7 +24,7 @@ useEffect(() => {
 
 const menuList = menus.map(menus => {
   return menus.menu_item.map((menu ,index)=> {
-   return  <li key={index} className='hvr-underline-from-center p-3'><Link to={`/${menu}`} className=' has-text-white'>{menu}</Link></li>
+   return  <li key={index} className='hvr-underline-from-center p-3'><Link to={`/pages/${menu}`} className=' has-text-white'>{menu}</Link></li>
   })
 })
     return(
