@@ -43,8 +43,7 @@ const menuList = menus.map(menus => {
   </div>
 
      <ul className='is-flex  is-flex-gap-xl'>
-        {/* {menuList} */}
-        <li className='hvr-underline-from-center p-3'><Link to='/dashboard/index' className=' has-text-white'>Dashboard</Link></li>
+        {menuList}
         <li className={value.isLogin ? 'hvr-underline-from-center p-3' : 'hide'}><Link to='/dashboard/index' className=' has-text-white'>Dashboard</Link></li>
      </ul>
 
