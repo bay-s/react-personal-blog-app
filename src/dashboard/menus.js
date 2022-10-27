@@ -13,6 +13,7 @@ const Menus = () => {
         saveMenu:[],
         tempMenu:[]
       })
+   const [inputCheck,setInputCheck] = useState(null)
    const checkContainer = useRef(null)
       useEffect(() => {
         const fetchMenu = async () => {
@@ -41,6 +42,7 @@ const Menus = () => {
 
   const handlerChange = (e) => {
      let isChecked = e.target.checked;
+     setInputCheck(e.target)
          if(isChecked){
           setMenusItem({...menusItem,
             menu:[...menusItem.menu,e.target.value]
@@ -66,7 +68,7 @@ const Menus = () => {
      saveMenu:[...menusItem.saveMenu,...menusItem.menu],
      tempMenu:[...menusItem.tempMenu,...menusItem.menu]
       })
-     checkContainer.current.checked = false
+     inputCheck.checked = false
     }
 
     const removeMenu = e => {

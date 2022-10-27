@@ -47,14 +47,13 @@ const MenusRight= (props) => {
       is_check:true
     })
     .eq('id',id)
-    if(data){
-      console.log(data);
-      alert("Create menu succes")
-      window.location.reload()
-    }
     if(error) {
       alert(`error ${error.message}`)
-    console.log(error);
+       console.log(error);
+    }else{
+      alert("save menu succes")
+      console.log(data);
+      window.location.reload()
     }
   }
   

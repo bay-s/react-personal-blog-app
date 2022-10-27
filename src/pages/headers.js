@@ -32,7 +32,7 @@ const menuList = menus.map(menus => {
 <nav class="navbar mx-5 is-flex  align-center justify-between bg-transparent container" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <Link class="navbar-item main-title hvr-underline-from-center" to='/'>
-    <h3 className='text-title is-title is-size-4 is-bold main-title '>{value.data.site_title == null ? 'Your Website name' : value.data.site_title}</h3>
+    <h3 className='text-title is-title is-size-4 is-bold main-title '>{value.data.site_title == null ? 'Home' : value.data.site_title}</h3>
     </Link>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">

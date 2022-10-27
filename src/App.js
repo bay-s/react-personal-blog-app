@@ -14,6 +14,7 @@ import EditPost from "./dashboard/edit-post"
 import EditPage from "./dashboard/edit-page"
 import GetPost from "./dashboard/get-post-by"
 import PostByCategory from "./pages/post-by-category"
+import CreatePageCopy from "./dashboard/create-page-backup"
 
 
 export const AppContext = createContext()
@@ -103,7 +104,8 @@ function App() {
       <Route path='/post/:id' element={<PostDetail />} /> 
       <Route path='/dashboard/:id' element={isLogin ? <DashBoard /> : <LoginPage />} />
       <Route path='/dashboard/create-post/' element={isLogin ? <CreatePost /> : <LoginPage />} />
-      <Route path='/dashboard/create-page/' element={isLogin ? <CreatePage /> : <LoginPage />} />
+      <Route path='/dashboard/create-page/' element={isLogin ? <CreatePageCopy /> : <LoginPage />} />
+      {/* <Route path='/dashboard/create-page/' element={isLogin ? <CreatePage /> : <LoginPage />} /> */}
       <Route path='/dashboard/edit-post/:id' element={isLogin ? <EditPost /> : <LoginPage />} />
       <Route path='/dashboard/edit-page/:id' element={isLogin ? <EditPage /> : <LoginPage />} />
       <Route path='/:id' element={<Pages />} />

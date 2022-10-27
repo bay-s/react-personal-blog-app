@@ -58,7 +58,7 @@ const PostEditor = (props) => {
       setIsSubmit(true);
       setMessage({ ...message, isUpload: true });
       e.preventDefault();
-      console.log("Test");
+
       if (!values.title || !values.quill) {
         setMessage({
           pesan: `Input Value Required`,
