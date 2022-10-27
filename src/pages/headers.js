@@ -44,7 +44,6 @@ const menuList = menus.map(menus => {
 
      <ul className='is-flex  is-flex-gap-xl'>
         {menuList}
-        <li  className='hvr-underline-from-center p-3'><Link to='/' className=' has-text-white'>test</Link></li>
         <li className={value.isLogin ? 'hvr-underline-from-center p-3' : 'hide'}><Link to='/dashboard/index' className=' has-text-white'>Dashboard</Link></li>
      </ul>
 
