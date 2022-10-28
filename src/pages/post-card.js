@@ -6,11 +6,11 @@ import img from '../img/no-image.png'
 const PostCard = (props) => {
 
     return(
-        <div class="tile is-parent px-3 p-0">
+        <div class="tile is-parent px-3 p-0 ">
         <article class="tile is-child box bg-dark is-flex-gap-sm is-flex is-flex-column">
          <div class="card-image mb-2">
             <figure class="image is-2by1">
-             {props.posts.post_thumbnail !== null ? 
+             {props.posts.post_thumbnail !==  ''  ? 
              <Link to={`/post/${props.posts.id}`} >
              <img src={props.posts.post_thumbnail} alt="Placeholder image" className='post-image'/>
              </Link>

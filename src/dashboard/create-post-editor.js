@@ -1,13 +1,11 @@
 import React, { useContext, useEffect, useRef, useState }  from "react";
 import { Link } from 'react-router-dom';
 import Header from '../pages/header';
-import Sidebar from './sidebar';
 import ReactQuill from 'react-quill';
 import PostSidebar from './create-post-sidebar';
 import supabase from '../supabase-config';
 import ErrorMessage from './error-message';
 import { AppContext } from '../App';
-import UploadMedia from './upload-media';
 import module from './quill-modules';
 
 const PostEditor = (props) => {
@@ -91,6 +89,8 @@ const PostEditor = (props) => {
           sukses: true,
           isUpload: false,
         });
+        setValues({})
+        titles.current.value = ''
       }
       if (error) {
         console.log(error);

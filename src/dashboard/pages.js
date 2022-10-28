@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import Pagination from '../pages/pagination';
 import supabase from '../supabase-config';
 import PagesList from './pages-list';
 
@@ -56,24 +57,7 @@ const Pages = (props) => {
             </table>
           </div>
 {/* PAGINATION */}
-{totalPost < 7 ? "" :
-<div class="level">
-              <div class="level-left">
-                <div class="level-item">
-                  <div class="buttons has-addons">
-                    <button type="button" class="button is-active">1</button>
-                    <button type="button" class="button">2</button>
-                    <button type="button" class="button">3</button>
-                  </div>
-                </div>
-              </div>
-              <div class="level-right">
-                <div class="level-item">
-                  <small>Page 1 of 3</small>
-                </div>
-              </div>
- </div>
- }
+<Pagination totalPost={totalPost}/>
 {/* END PAGINATION */}
         </div>
       </div>

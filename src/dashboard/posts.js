@@ -1,21 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
+import Pagination from '../pages/pagination';
 import supabase from '../supabase-config';
 import PostList from './post-list';
+
 
 const Posts = (props) => {
   const [post,setPost] = useState([])
   const [totalPost,setTotalPost] = useState(0)
   const {id} = useParams()
-
+  const [value,setValue] = useState({
+    page:0,
+    leftPage:totalPost,
+    counts:1
+    })
+  
   useEffect(() => {
    fetchPost()
-  },[])
- 
+  },[value.page,value.counts])
+
   const fetchPost = async () => {
    const { data, error ,count} = await supabase
    .from('posts')
    .select('*', { count: 'exact' })
+   .order("id", { ascending: true })
+   .range(value.page,value.counts)
    if(data){
      console.log(data);
      setTotalPost(count)
@@ -23,6 +32,27 @@ const Posts = (props) => {
    }if(error) console.log(error.message);
   }
  
+  const nextPage = (e) => {
+    e.preventDefault()
+    setValue({...value,
+      page:value.page + 2,
+      counts:value.counts + 2,
+      leftPage:totalPost - value.counts
+    })
+  
+  }
+  
+  const prevPage = (e) => {
+    e.preventDefault()
+    if(value.counts <= 1){
+  
+    }else{
+      setValue({...value,
+        page:value.page - 2,
+        counts:value.counts - 2
+      })
+    }
+  }
     return(
 <>
 <div className='box shadow is-flex align-center is-flex-gap-md bg-dark'>
@@ -56,7 +86,7 @@ const Posts = (props) => {
                 <th>Author</th>
                 <th>Categories</th>
                 <th>Tags</th>
-                <th>Created</th>
+                <th onClick={nextPage}>Created</th>
                 <th></th>
               </tr>
               </thead>
@@ -68,24 +98,7 @@ const Posts = (props) => {
             </table>
           </div>
 {/* PAGINATION */}
-{totalPost < 7 ? "" :
-<div class="level">
-              <div class="level-left">
-                <div class="level-item">
-                  <div class="buttons has-addons">
-                    <button type="button" class="button is-active">1</button>
-                    <button type="button" class="button">2</button>
-                    <button type="button" class="button">3</button>
-                  </div>
-                </div>
-              </div>
-              <div class="level-right">
-                <div class="level-item">
-                  <small>Page 1 of 3</small>
-                </div>
-              </div>
- </div>
- }
+<Pagination totalPost={totalPost} value={value} prevPage={prevPage} nextPage={nextPage}/>
 {/* END PAGINATION */}
         </div>
       </div>

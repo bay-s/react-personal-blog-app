@@ -28,7 +28,7 @@ const menuList = menus.map(menus => {
   })
 })
     return(
-<header className='headers p-2'>
+<header className='headers p-2 bg-dark'>
 <nav class="navbar mx-5 is-flex  align-center justify-between bg-transparent container" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <Link class="navbar-item main-title hvr-underline-from-center" to='/'>

@@ -30,7 +30,7 @@ const Sidebar = () => {
 
 <div class="field py-3">
   <div class="control has-icons-left has-icons-right">
-    <input class="input  bg-darks text-white is-primary" type="text" placeholder="Text input"  />
+    <input class="input  bg-dark text-white is-primary" type="text" placeholder="Search post"  />
     <span class="icon is-small is-left">
       <i class="fa fa-search"></i>
     </span>
