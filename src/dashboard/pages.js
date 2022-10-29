@@ -57,7 +57,7 @@ const Pages = (props) => {
             </table>
           </div>
 {/* PAGINATION */}
-<Pagination totalPost={totalPost}/>
+{/* <Pagination totalPost={totalPost}/> */}
 {/* END PAGINATION */}
         </div>
       </div>
