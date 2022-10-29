@@ -3,6 +3,8 @@ import module from '../dashboard/quill-modules';
 import ReactQuill from 'react-quill';
 import ErrorMessage from '../dashboard/error-message';
 import supabase from '../supabase-config';
+import ReplyForm from './reply-form';
+
 
 const CommentForm = (props) => {
     const [isSubmit, setIsSubmit] = useState(false);
@@ -76,7 +78,7 @@ const CommentForm = (props) => {
       }
      } 
     return(
-<section class="section is-main-section">
+<section class="section is-main-section p-1 px-3">
 <form className='is-flex is-flex-column is-flex-gap-md box bg-dark' onSubmit={postComment}>
 <div class="field">
   <div class="control">
@@ -90,11 +92,17 @@ const CommentForm = (props) => {
   </div>
 </div>
 
+<label class="checkbox ">
+  <input type="checkbox" name='save' />
+  <span className='text-white px-2 is-size-7'>Save my name, email, and website in this browser for the next time I comment.</span>
+</label>
+
 <ReactQuill ref={values.ref} theme="snow" value={values.quill} name='quill'  modules={module.toolbars} formats={module.formats} onChange={handlerChange}/>
 {isSubmit ? <button type='submit' className='button is-primary navbar-end'>Submit</button> :
 <button className='button is-primary navbar-end' disabled>Submit</button>}
 <ErrorMessage pesan={message.pesan} isError={message.isError} sukses={message.sukses}/>
 </form>
+
 </section>
     )
 }

@@ -265,7 +265,9 @@ textarea {
   --greens: #08fdd8;
   --whitey: #ffffff99;
 }
-
+html{
+  background-color: #000010 !important;
+}
 /* PLACE HOLDER */
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
   color:    white!important;
@@ -348,7 +350,7 @@ aside.aside {
 
 body {
   font-family: "Poppins", sans-serif !important;
-  height: 100vh;
+
 }
 
 #root{
@@ -398,6 +400,13 @@ border: 1px solid rgba(106, 20, 202, 0.9);
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
 }
 
+.hides{
+  visibility: hidden !important;
+ opacity: 0;
+ transition: 200ms !important;
+ height: 0 !important;
+ animation: fade 200ms ease-in-out ;
+}
 .hide{
   display: none !important;
   visibility: hidden !important;
