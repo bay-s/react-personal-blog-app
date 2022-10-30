@@ -5,6 +5,7 @@ import App, { AppContext } from '../App'
 import ReplyForm from './reply-form'
 import Author from '../dashboard/author'
 import supabase from '../supabase-config'
+import AuthorComment from '../dashboard/author-comment'
 
 
 const ReplyCard = (props) => {
@@ -36,7 +37,7 @@ const deleteComment = async (e) => {
    }
 }
 
-console.log( <Author />)
+
     return(
 
  <div className='bg-dark shadow is-flex is-flex-column is-flex-gap-md p-4'>
@@ -44,9 +45,7 @@ console.log( <Author />)
  <figure class="image is-32x32">
   <img class="is-rounded" src={akun} />
 </figure>
- <h3 className='is-title text-title is-size-7'>
- <Author id={reply.author}/>
-</h3>
+ <AuthorComment id={reply.author}/>
  <span className='has-text-grey is-size-7 is-title'>
 {timeDifference(reply.created_at)}
  </span>

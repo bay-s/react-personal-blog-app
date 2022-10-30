@@ -2,8 +2,10 @@ import React, { useContext } from 'react'
 import { useParams ,Navigate} from 'react-router-dom';
 import Header from '../pages/header';
 import Category from './category';
+import Comment from './comment';
 import EditProfile from './edit-profile';
 import Main from './main';
+import MediaLibrary from './media';
 import Menus from './menus';
 import Page from './pages';
 import Posts from './posts';
@@ -35,6 +37,8 @@ const string_id = id.toString().toLowerCase()
 {string_id === 'category' ?  <Category />  : ""}
 {string_id === 'edit-profile' ? <EditProfile /> : ""}
 {string_id === 'menus' ? <Menus /> : ""}
+{string_id === 'media' ? <MediaLibrary /> : ""}
+{string_id === 'comment' ? <Comment /> : ""}
 </div>
 {/* END CONTETN */}
 

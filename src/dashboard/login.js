@@ -63,8 +63,7 @@ handlerChange = (e) => {
           isSubmit:false,
           sukses:false
         })
-      }
-      if(data){
+      }else{
         console.log(data);
         this.setState({
           error:false,
@@ -72,8 +71,8 @@ handlerChange = (e) => {
           sukses:true,
           pesan:"Login Sukses"
         })
-        window.location.href = "/dashboard/main";
       }
+ 
 
   }
   

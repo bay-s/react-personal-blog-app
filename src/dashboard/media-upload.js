@@ -4,7 +4,8 @@ import supabase from '../supabase-config'
 import ErrorMessage from './error-message'
 
 
-const UploadMedia = (props) => {
+
+const MediaUpload = (props) => {
     const {value} = useContext(AppContext)
     const [images,setImages] = useState({
         imgName:'',
@@ -20,12 +21,6 @@ const UploadMedia = (props) => {
     })
    const image = useRef(null)
    const upload = useRef(null)
-   const [selectValue,setSelectValue] = useState('')
-
-   useEffect(() => {
-    getStorageImage()
-    getPublicUrls ()
-   },[])
 
    const  ImageChange = event => {
         console.log(event.target.files);
@@ -73,64 +68,15 @@ const UploadMedia = (props) => {
         }
       }
 
- const openTabs = (e) => {
-    setSelectValue(e.target.value) 
-    if(e.target.value === 'images') {
-    upload.current.classList.add('hide')
-    image.current.classList.remove('hide')
-    }else{
-     upload.current.classList.remove('hide')
-    image.current.classList.add('hide')
-    }
- } 
-
- const getStorageImage = async () => {
-  const { data, error } = await supabase
-  .storage
-  .from('images')
-  .list('public', {
-    limit: 100,
-    offset: 0,
-  })
-  if(data){
-console.log(data);
-    setImages({...images ,
-        media:data
-       })
-  }
-  if(error) console.log(error);
- }
-
- const getPublicUrls = (url) => {
-  const { data } = supabase
-  .storage
-  .from('images')
-  .getPublicUrl(`public/${url}`)
-  if(data){
-    return data.publicUrl
-  }
- }
-
-
     return(
-<div class="modal-card">
- <header class="modal-card-head is-flex justify-between p-2">
- <div class="select is-link is-normal">
- <select 
-        value={selectValue} 
-        onChange={openTabs} 
-      >
-    <option value='images'>Images</option>
-    <option value='upload'>Upload</option>
-  </select>
-</div>
-<button class="delete" aria-label="close" onClick={props.openModal}></button>
-</header>
-        {/* START MODAL CONTENT */}
-        <section class="modal-card-body">
-        {/* UPLOAD TAB */}
-<section className='hide' ref={upload}>
-<form class="file has-name is-boxed is-centered is-info is-flex is-flex-column is-flex-gap-md" onSubmit={uploadImage}>
+<div className='box bg-dark border-primary mb-4'>
+
+<span class="justify-center mx-auto text-white py-2">
+  Upload images here
+</span>
+ <button class="modal-close is-large text-white" aria-label="close" onClick={props.openTabs}></button>
+
+<form class="file has-name is-boxed is-info is-flex is-flex-column is-flex-gap-md">
   <label class="file-label">
     <input class="file-input" type="file" name="resume" onChange={ImageChange} />
     <span class="file-cta">
@@ -141,40 +87,21 @@ console.log(data);
         Choose a file…
       </span>
     </span>
-    <span class="file-name">
-     {images.imgName}
+    <span className={images.imgName === '' ? 'hide' :"p-2 text-center is-title is-italic border-primary text-white is-centered w-100"}>
+    {images.imgName}
     </span>
   </label>
 <div className={images.hide ? "" : 'hide'} >
 {images.isUpload ?  <button type='submit' class="button is-info " >Save</button> : <button class="button is-link is-loading is-small" disabled>Loading</button>}
 </div>
 <ErrorMessage pesan={images.pesan} error={images.error} sukses={images.sukses}/>
-</form>  
-</section>
-{/* END UPLOAD TAB */}
-{/* IMAGES TAB */}
-<section className='' ref={image}>
-{/* STARTIMAGE SELECTION */}
-<div className='is-flex align-center is-flex-gap-md'>
-     {images.media.length < 1 ? "" : images.media.map(img => {
-      return  <figure class="image is-128x128 is-clickable" tabindex="-1" id='image-media'>
-  <img  src={getPublicUrls(img.name)} className='h-100 w-100 media' onClick={props.selectImage}/>
-</figure>
-     })}
+</form>
+{/* END FORM */}
 </div>
-{/* END IMAGE SELECTION */}
-         </section>
-{/*END IMAGE TABS  */}
-        </section>
-        {/* END MODAL CONTENT */}
-        <footer class="modal-card-foot p-2">
-         <form onSubmit={props.saveImage} className='navbar-end'><button class="button is-info is-small">Set featured image</button></form>
-        </footer>
-      </div>
     )
 }
 
 
 
-export default UploadMedia ;
+export default MediaUpload;
 

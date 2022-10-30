@@ -58,7 +58,7 @@ const postCard = post.length < 1 ? "" : post.map(posts => {
 
 <article className='section is-main-section px-5 py-1'>
 <h3 className={dataComment.length < 1 ? 'hide' : 'text-title is-title p-2'}>
-  Recent Comment
+Leave a Comment
 </h3>
 {dataComment.length < 1 ? "" :
 dataComment.map(comment => {

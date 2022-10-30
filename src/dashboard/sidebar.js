@@ -32,6 +32,18 @@ const Sidebar = () => {
             </Link>
             </li>
             <li>
+            <Link to='/dashboard/media/' class="has-icon">
+                <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
+                <span class="menu-item-label">Media</span>
+            </Link>
+            </li>
+            <li>
+            <Link to='/dashboard/comment/' class="has-icon">
+                <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
+                <span class="menu-item-label">Comment</span>
+            </Link>
+            </li>
+            <li>
             <Link to='/dashboard/category/' class="has-icon">
                 <span class="icon"><i class="mdi mdi-account-circle"></i></span>
                 <span class="menu-item-label">Category</span>

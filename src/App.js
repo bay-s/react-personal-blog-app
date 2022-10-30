@@ -17,6 +17,7 @@ import PostByCategory from "./pages/post-by-category"
 
 
 
+
 export const AppContext = createContext()
 
 function App() {
@@ -49,7 +50,9 @@ function App() {
       }
     })
 
-    console.log(isLogin);
+if(data.is_admin){
+  console.log("ADMIN");
+}
   },[])
 
   const openModal = e => {
