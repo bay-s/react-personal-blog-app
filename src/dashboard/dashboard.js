@@ -20,7 +20,7 @@ const string_id = id.toString().toLowerCase()
 <div id="app">
 <Header />
 <div class="container is-fluid my-5">
-<div className='columns is-multiline'>
+<div className='columns is-multiline dashboard-container'>
 {/* START SIDEBAR */}
 <div className='column is-2 bg-dark'>
 <Sidebar />

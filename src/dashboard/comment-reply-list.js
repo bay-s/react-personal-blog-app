@@ -12,7 +12,7 @@ const ReplyList = (props) => {
   const deleteComment = async (e) => {
     e.preventDefault()
     const id = parseInt(e.target.dataset.target)
-    console.log(id);
+    const container = e.target.parentElement.parentElement.parentElement
     if(window.confirm("Are you sure want to delete this ?")){
       const { data,error } = await supabase.from('reply_comment')
        .delete()
@@ -21,7 +21,7 @@ const ReplyList = (props) => {
        if(data)  {
         alert("Delete success")
         postDecrement() 
-        window.location.reload()
+        container.classList.add('hide')
       }
        if(error) alert(`Something wrong ${error.message}`)
     }
@@ -49,7 +49,7 @@ return   <tr className='table-comment'>
 <span className='is-size-7' dangerouslySetInnerHTML={createMarkup(posts)} />
 <div className='action is-flex align-center is-flex-gap-md'>
 <button className='navbar-item has-text-info btn-transparent is-size-7'>Reply</button>
-<button className='navbar-item has-text-danger btn-transparent is-size-7' onClick={deleteComment}>Delete</button>
+<button className='navbar-item has-text-danger btn-transparent is-size-7' data-target={posts.id} onClick={deleteComment}>Delete</button>
 </div>
 </td>
 <td data-label="Author w-25">

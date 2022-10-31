@@ -6,7 +6,8 @@ import supabase from '../supabase-config'
 
 const CommentList = (props) => {
   const {value} = useContext(AppContext)
-  const deletePost = async (e) => {
+
+  const deleteComment = async (e) => {
     e.preventDefault()
     const id = parseInt(e.target.dataset.target)
     console.log(id);
@@ -27,7 +28,6 @@ const CommentList = (props) => {
   const postDecrement = async (e) => {
     e.preventDefault()
     const { data, error } = await supabase.rpc('post_inc', { x: 1, row_id: value.data.id })
-
   if (error) console.error(error)
   else console.log(data)
   }
@@ -51,7 +51,7 @@ return   <tr className='table-comment'>
 <span className='is-size-7' dangerouslySetInnerHTML={createMarkup(posts)} />
 <div className='action is-flex align-center is-flex-gap-md'>
 <button className='navbar-item has-text-info btn-transparent is-size-7'>Reply</button>
-<button className='navbar-item has-text-danger btn-transparent is-size-7' onClick={deletePost }>Delete</button>
+<button className='navbar-item has-text-danger btn-transparent is-size-7' data-target={posts.id} onClick={deleteComment}>Delete</button>
 </div>
 </td>
 <td data-label="Author w-25">
@@ -60,7 +60,7 @@ return   <tr className='table-comment'>
 </Link>
 </td>
 <td data-label="Created">
-  <small class="has-text-grey is-abbr-like text-nowrap is-size-7" title= {posts.created_at}>
+  <small className="has-text-grey is-abbr-like text-nowrap is-size-7" title= {posts.created_at}>
     {posts.created_at}
   </small>
 </td>

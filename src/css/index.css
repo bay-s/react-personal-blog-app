@@ -892,6 +892,10 @@ transition: 250ms;
     flex-direction: column-reverse !important;
   }
 
+ .dashboard-container{
+  display: flex !important;
+  flex-direction: column-reverse !important;
+ }
 }
 
 

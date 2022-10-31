@@ -24,7 +24,7 @@ useEffect(() => {
 
 const menuList = menus.map(menus => {
   return menus.menu_item.map((menu ,index)=> {
-   return  <li key={index} className='hvr-underline-from-center p-3'><Link to={`/pages/${menu}`} className=' has-text-white'>{menu}</Link></li>
+   return  <li key={index} className='hvr-underline-from-center py-3'><Link to={`/pages/${menu}`} className=' has-text-white'>{menu}</Link></li>
   })
 })
     return(
@@ -34,17 +34,11 @@ const menuList = menus.map(menus => {
     <Link className="navbar-item main-title hvr-underline-from-center" to='/'>
     <h3 className='text-title is-title is-size-4 is-bold main-title '>{value.data.site_title == null ? 'Home' : value.data.site_title}</h3>
     </Link>
-
-    <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
   </div>
 
      <ul className='is-flex  is-flex-gap-xl'>
         {menuList}
-        <li className={value.isLogin ? 'hvr-underline-from-center p-3' : 'hide'}><Link to='/dashboard/index' className=' has-text-white'>Dashboard</Link></li>
+        <li className={value.isLogin ? 'hvr-underline-from-center py-3' : 'hide'}><Link to='/dashboard/index' className=' has-text-white'>Dashboard</Link></li>
      </ul>
 
 </nav>
