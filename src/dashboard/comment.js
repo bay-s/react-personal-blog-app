@@ -1,24 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
-import Pagination from '../pages/pagination';
 import supabase from '../supabase-config';
 import CommentList from './comment-list';
-import PostList from './post-list';
+import ReplyList from './comment-reply-list';
 
 
 const Comment = (props) => {
     const [post,setPost] = useState([])
     const [totalPost,setTotalPost] = useState(0)
-    const {id} = useParams()
-    const [value,setValue] = useState({
-      page:0,
-      leftPage:totalPost,
-      counts:1
-      })
-    
+    const [reply,setReply] = useState([])
+
     useEffect(() => {
      fetchPost()
-    },[value.page,value.counts])
+     fetchCommentReply()
+    },[])
   
     const fetchPost = async () => {
      const { data, error ,count} = await supabase
@@ -30,16 +25,22 @@ const Comment = (props) => {
        setPost(data)
      }if(error) console.log(error.message);
     }
-   
+    const fetchCommentReply = async () => {
+      const { data, error ,count} = await supabase
+      .from('reply_comment')
+      .select('*', { count: 'exact' })
+      if(data){
+        setReply(data)
+      }if(error) console.log(error.message);
+     }
     return(
 <>
 <div className='box shadow is-flex align-center is-flex-gap-md bg-dark'>
-<h3 className='is-bold is-title is-size-4 text-title'>Posts</h3>
-<Link to='/dashboard/create-post/' className='button hvr-sweep-to-right is-outlined border-primary bg-transparent text-title is-small'>Add New</Link>
+<h3 className='is-bold is-title is-size-4 text-title'>Comment</h3>
 </div>
 
     {/* start table */}
-<section class="section is-main-section p-2">
+<section class="section is-main-section p-2 ">
 <div class="card has-table ">
       <div class="card-content ">
         <div class="b-table has-pagination">
@@ -56,6 +57,7 @@ const Comment = (props) => {
               <tbody>
 {/* POST LIST */}
 <CommentList  post={post} key={post}/>
+<ReplyList post={reply} key={reply}/>
 {/* END POST LIST */}
               </tbody>
             </table>

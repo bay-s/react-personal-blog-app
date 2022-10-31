@@ -71,7 +71,7 @@ const ReplyForm = (props) => {
      } 
 
     return(
-<section class="section is-main-section p-0">
+<section className="section is-main-section p-0">
 <form className='is-flex is-flex-column is-flex-gap-md bg-dark' onSubmit={postComment}>
 <ReactQuill ref={values.ref} theme="snow" value={values.quill} name='quill'  modules={module.toolbars} formats={module.formats} onChange={handlerChange}/>
 {/* START BUTTON */}

@@ -70,8 +70,8 @@ console.log(data);
 
 
     return(
-<div className='box p-1 has-background-grey-darker'>
-<section className='' ref={image}>
+<div className='box p-1 bg-dark border-primary'>
+<section className='p-3' ref={image}>
 {/* STARTIMAGE SELECTION */}
 <div className='is-flex align-center is-flex-gap-md'>
      {images.media.length < 1 ? "" : images.media.map(img => {

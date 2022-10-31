@@ -2,21 +2,24 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AppContext } from '../App'
 import supabase from '../supabase-config'
+import Author from './author'
 
 
-const CommentList = (props) => {
+
+const ReplyList = (props) => {
   const {value} = useContext(AppContext)
-  const deletePost = async (e) => {
+
+  const deleteComment = async (e) => {
     e.preventDefault()
     const id = parseInt(e.target.dataset.target)
     console.log(id);
-    if(window.confirm("Are you sure want to delete this post ?")){
-      const { data,error } = await supabase.from('comment')
+    if(window.confirm("Are you sure want to delete this ?")){
+      const { data,error } = await supabase.from('reply_comment')
        .delete()
        .eq('id', id)
        .select()
        if(data)  {
-        alert("Delete post success")
+        alert("Delete success")
         postDecrement() 
         window.location.reload()
       }
@@ -33,25 +36,20 @@ const CommentList = (props) => {
   }
 
   const createMarkup = (posts) => {
-    return {__html:posts.comment_content};
+    return {__html:posts.reply_content};
    }
    
     return(
 props.post.length < 1 ? "" : props.post.map((posts ,index) => {
 return   <tr className='table-comment'>
 <td class="is-checkbox-cell w-25" >
-<h3 className='is-size-7 has-text-info'>
-    {posts.author_name}
-</h3>
-<h3 className='is-size-7 has-text-info'>
-    {posts.author_email}
-</h3>
+<Author id={posts.author}/>
 </td>
 <td class="is-image-cell w-25">
 <span className='is-size-7' dangerouslySetInnerHTML={createMarkup(posts)} />
 <div className='action is-flex align-center is-flex-gap-md'>
 <button className='navbar-item has-text-info btn-transparent is-size-7'>Reply</button>
-<button className='navbar-item has-text-danger btn-transparent is-size-7' onClick={deletePost }>Delete</button>
+<button className='navbar-item has-text-danger btn-transparent is-size-7' onClick={deleteComment}>Delete</button>
 </div>
 </td>
 <td data-label="Author w-25">
@@ -70,4 +68,4 @@ return   <tr className='table-comment'>
     )
 }
 
-export default CommentList;
+export default ReplyList;

@@ -46,7 +46,7 @@ const CategoryList = (props) => {
         <td class="is-image-cell">
         </td>
         <td data-label="Name">
-        <Link to={`/dashboard/edit-page/${cat.id}`}>{cat.category}</Link>
+        <Link to={`/posts/category-name/${cat.category}`}>{cat.category}</Link>
         </td>
         <td class="is-actions-cell">
           <div class="buttons is-right">

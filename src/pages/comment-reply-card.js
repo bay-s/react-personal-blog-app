@@ -42,9 +42,6 @@ const deleteComment = async (e) => {
 
  <div className='bg-dark shadow is-flex is-flex-column is-flex-gap-md p-4'>
  <div className='is-flex align-center is-flex-gap-md'>
- <figure class="image is-32x32">
-  <img class="is-rounded" src={akun} />
-</figure>
  <AuthorComment id={reply.author}/>
  <span className='has-text-grey is-size-7 is-title'>
 {timeDifference(reply.created_at)}
@@ -60,3 +57,7 @@ const deleteComment = async (e) => {
 }
 
 export default ReplyCard;
+
+{/* <figure class="image is-32x32">
+<img class="is-rounded" src={akun} />
+</figure> */}

@@ -6,10 +6,10 @@ import img from '../img/no-image.png'
 const PostCard = (props) => {
 
     return(
-        <div class="tile is-parent px-3 p-0 ">
-        <article class="tile is-child box bg-dark is-flex-gap-sm is-flex is-flex-column">
-         <div class="card-image mb-2">
-            <figure class="image is-2by1">
+        <div className="tile is-parent px-3 p-0 ">
+        <article className="tile is-child box bg-dark is-flex-gap-sm is-flex is-flex-column">
+         <div className="card-image mb-2">
+            <figure className="image is-2by1">
              {props.posts.post_thumbnail !==  ''  ? 
              <Link to={`/post/${props.posts.id}`} >
              <img src={props.posts.post_thumbnail} alt="Placeholder image" className='post-image'/>
@@ -19,9 +19,9 @@ const PostCard = (props) => {
              
             </figure>
           </div>
-              <p class="title is-3"><Link to={`/post/${props.posts.id}`} className='text-title'>{props.posts.post_title}</Link></p>
-              <p class="subtitle is-7 has-text-grey">{timeDifference(props.posts.created_at)}</p>
-              <p class="subtitle is-6 text-white lh-md text-ellips">{props.posts.the_excerpt}</p>
+              <p className="title is-3"><Link to={`/post/${props.posts.id}`} className='text-title'>{props.posts.post_title}</Link></p>
+              <p className="subtitle is-7 has-text-grey">{timeDifference(props.posts.created_at)}</p>
+              <p className="subtitle is-6 text-white lh-md text-ellips">{props.posts.the_excerpt}</p>
               {/* <div dangerouslySetInnerHTML={createMarkup(posts)} /> */}
               <Link to={`/post/${props.posts.id}`} className='button hvr-sweep-to-right  is-outlined border-primary bg-transparent navbar-start'>
               Read More

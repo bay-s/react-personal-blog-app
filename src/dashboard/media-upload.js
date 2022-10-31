@@ -19,8 +19,6 @@ const MediaUpload = (props) => {
         media:[],
         media_url:[]
     })
-   const image = useRef(null)
-   const upload = useRef(null)
 
    const  ImageChange = event => {
         console.log(event.target.files);
@@ -63,8 +61,12 @@ const MediaUpload = (props) => {
             console.log(data);
             const url = data.Key
             setImages({...images ,
-                isUpload:true
+              isUpload:true,
+              error:true,
+              sukses:false,
+              pesan:`Upload success`
                  })
+             window.location.reload()
         }
       }
 
@@ -76,7 +78,7 @@ const MediaUpload = (props) => {
 </span>
  <button class="modal-close is-large text-white" aria-label="close" onClick={props.openTabs}></button>
 
-<form class="file has-name is-boxed is-info is-flex is-flex-column is-flex-gap-md">
+<form class="file has-name is-boxed is-info is-flex is-flex-column is-flex-gap-md" onSubmit={uploadImage}>
   <label class="file-label">
     <input class="file-input" type="file" name="resume" onChange={ImageChange} />
     <span class="file-cta">

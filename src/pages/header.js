@@ -13,44 +13,44 @@ const Header = () => {
     console.log(error);
   }
     return(
-      <nav id="navbar-main" class="navbar shadow bg-dark  p-1 ">
-        <div class="navbar-brand">
-        <Link class="navbar-item main-title hvr-underline-from-center" to='/'>
+      <nav id="navbar-main" className="navbar shadow bg-dark  p-1 ">
+        <div className="navbar-brand">
+        <Link className="navbar-item main-title hvr-underline-from-center" to='/'>
     <h3 className='text-title is-title is-size-4 is-bold main-title '>{value.data.site_title == null ? 'Your Website name' : value.data.site_title}</h3>
     </Link>
         </div>
-        <div class="navbar-brand is-right">
-        <a class="navbar-item is-hidden-desktop jb-aside-mobile-toggle">
-            <span class="icon"><i class="fa fa-bars is-bold text-white" aria-hidden="true"></i></span>
+        <div className="navbar-brand is-right">
+        <a className="navbar-item is-hidden-desktop jb-aside-mobile-toggle">
+            <span className="icon"><i className="fa fa-bars is-bold text-white" aria-hidden="true"></i></span>
           </a>
         </div>
         
-        <div class="navbar-menu fadeIn animated faster" id="navbar-menu">
-          <div class="navbar-end">
-            <div class="navbar-item has-dropdown has-dropdown-with-icons has-divider has-user-avatar is-hoverable">
-              <a class="navbar-link is-arrowless">
-                <div class="is-user-avatar">
-                  <img src={value.data.avatar === '' ? akun : value.data.avatar } alt="John Doe" />
+        <div className="navbar-menu fadeIn animated faster" id="navbar-menu">
+          <div className="navbar-end">
+            <div className="navbar-item has-dropdown has-dropdown-with-icons has-divider has-user-avatar is-hoverable">
+              <a className="navbar-link is-arrowless">
+                <div className="is-user-avatar">
+                  <img src={value.data.avatar === '' ? akun : value.data.avatar } alt="IMAGES" />
                 </div>
-                <div class="is-user-name text-title"><span>{value.data.username}</span></div>
-                <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
+                <div className="is-user-name text-title"><span>{value.data.username}</span></div>
+                <span className="icon"><i className="mdi mdi-chevron-down"></i></span>
               </a>
-              <div class="navbar-dropdown bg-dark">
-              <Link class="navbar-item" to='/dashboard/edit-profile'>
-                  <span class="icon"><i class="fa fa-user text-white"></i></span>
+              <div className="navbar-dropdown bg-dark">
+              <Link className="navbar-item" to='/dashboard/edit-profile'>
+                  <span className="icon"><i className="fa fa-user text-white"></i></span>
                   <span className='text-white'>My Profile</span>
               </Link>
-                <Link class="navbar-item" to='/dashboard/edit-profile'>
-                  <span class="icon"><i class="fa fa-cog text-white"></i></span>
+                <Link className="navbar-item" to='/dashboard/edit-profile'>
+                  <span className="icon"><i className="fa fa-cog text-white"></i></span>
                   <span className='text-white'>Settings</span>
                 </Link>
-                <a class="navbar-item">
-                  <span class="icon"><i class="fa fa-envelope text-white"></i></span>
+                <a className="navbar-item">
+                  <span className="icon"><i className="fa fa-envelope text-white"></i></span>
                   <span className='text-white'>Messages</span>
                 </a>
-                <hr class="navbar-divider" />
-                <a class="navbar-item">
-                  <span class="icon"><i class="fa fa-sign-out text-white"></i></span>
+                <hr className="navbar-divider" />
+                <a className="navbar-item">
+                  <span className="icon"><i className="fa fa-sign-out text-white"></i></span>
                   <span onClick={Logout} className='text-white'>Log Out</span>
                 </a>
               </div>

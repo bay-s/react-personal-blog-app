@@ -67,7 +67,7 @@ const prevPage = (e) => {
      <>
       <Headers />
  <div className='container is-fluid is-max-widescreen my-5 post'>
- <article className='columns is-multilne'>
+ <article className='columns is-multilne home-container'>
         <div className='column is-3 box bg-dark'>
             <Sidebar />
         </div>

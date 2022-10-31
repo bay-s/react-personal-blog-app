@@ -399,7 +399,16 @@ border: 1px solid rgba(106, 20, 202, 0.9);
 /* background: rgba(84, 26, 149, 0.12) !;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
 }
-
+.action {
+  opacity: 0;
+  visibility: hidden;
+  height: 0 !important;
+}
+.table-comment:hover .action{
+opacity: 1;
+visibility: visible;
+height: 100% !important;
+}
 .hides{
   visibility: hidden !important;
  opacity: 0;
@@ -878,100 +887,12 @@ transition: 250ms;
 }
 
 @media (max-width:900px){
-  .sidebar-text p{
-font-size: 11px !important;
-
-  }
-}
-
-/* === RESPONSIVE ===== */
-@media (max-width:635px){
-  .user-info{
-    flex-direction: column !important;
-    gap: 20px !important;
-    align-items: flex-start !important;
-  }
-  .user-bio{
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 10px !important;
-  }
-  .button-user{
-    display: flex;
-    gap: 10px;
-  }
-
-  .user-bio p{
-    font-size: 13px !important;
-  }
-}
-@media (max-width:516px){
-
-  .header-bottom{
-    display: block !important;
-  }
- .headers-top{
-  display: none !important;
- }
-  .header-bottom.fixed-header{
-    transform: translateY(100px);
-    }
-}
-@media (max-width:500px){
-  .modal-image{
-    flex-direction: column;
-  }
-
-  .modal-posts .modal-card{
-    height: 550px !important;
-  }
-
-  .is-flex-column-mobile{
+  .home-container{
     display: flex !important;
-    flex-direction: column !important;
-  }
-  .comment-container {
-    height: 115px !important;
-  }
-
-  .user-info{
-    align-items: center!important;
-  }
-  .user-avatar{
-    gap: 1px !important;
-    flex-direction: column !important;
+    flex-direction: column-reverse !important;
   }
 
 }
 
 
-/* MOBILE VIEW */
-@media (max-width:370px){
-  .tabs ul a {
-   font-size: 12px !important; 
-  }
-  .tabs ul .fa{
-    font-size: 12px !important; 
-   }
-
-   .button-user .button{
-    /* height: 0 !important; */
-    padding: 10px !important;
-    font-size: 12px !important;
-   }
-   .user-bio p{
-    font-size: 10px !important;
-  }
-
-  .user-avatar nav p {
-    font-size: 14px !important; 
-  }
-
-}
-
-@media (max-width:300px){
-.modal-follow{
-  width: 230px !important;
-}
-}
 /* === END RESPONSIVE ===== */

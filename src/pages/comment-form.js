@@ -78,21 +78,21 @@ const CommentForm = (props) => {
       }
      } 
     return(
-<section class="section is-main-section p-1 px-3">
+<section className="section is-main-section p-1 px-3">
 <form className='is-flex is-flex-column is-flex-gap-md box bg-dark' onSubmit={postComment}>
-<div class="field">
-  <div class="control">
-    <input class={message.isError ? 'input is-danger bg-transparent text-white holder-white' : "input is-primary is-bold is-size-6 bg-transparent text-white holder-white"} type="text"  placeholder="Name" ref={values.names} name='name' onChange={handlerChange}/>
+<div classNames="field">
+  <div className="control">
+    <input className={message.isError ? 'input is-danger bg-transparent text-white holder-white' : "input is-primary is-bold is-size-6 bg-transparent text-white holder-white"} type="text"  placeholder="Name" ref={values.names} name='name' onChange={handlerChange}/>
   </div>
 </div>
 
-<div class="field">
-  <div class="control">
-    <input class={message.isError ? 'input is-danger bg-transparent text-white holder-white' : "input is-primary is-bold is-size-6 bg-transparent text-white holder-white"} type="email"  placeholder="Email" ref={values.emails} name='email' onChange={handlerChange}/>
+<div className="field">
+  <div className="control">
+    <input className={message.isError ? 'input is-danger bg-transparent text-white holder-white' : "input is-primary is-bold is-size-6 bg-transparent text-white holder-white"} type="email"  placeholder="Email" ref={values.emails} name='email' onChange={handlerChange}/>
   </div>
 </div>
 
-<label class="checkbox ">
+<label className="checkbox ">
   <input type="checkbox" name='save' />
   <span className='text-white px-2 is-size-7'>Save my name, email, and website in this browser for the next time I comment.</span>
 </label>

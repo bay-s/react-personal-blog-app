@@ -25,7 +25,7 @@ const AuthorComment = (props) => {
 
     return(
 userComment.length < 1 ? "" : userComment.map(m => {
-    return <div className='is-flex align-center is-flex-gap-md avatars'>
+    return <div className='is-flex align-center avatars'>
 <figure class="image is-24x24">
   <img class="is-rounded" src={m.avatar === '' ? akun : m.avatar} />
 </figure> 

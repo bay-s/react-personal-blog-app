@@ -45,21 +45,21 @@ const Pages = () => {
       <div className='column p-0'>
       {/* start post */}
       {post.length < 1 ? "" : post.map(posts => {
-       return <div class="tile is-parent">
-            <article class="tile is-child box bg-dark is-flex-gap-sm is-flex is-flex-column">
-            <div class="card-image mb-2">
+       return <div className="tile is-parent">
+            <article className="tile is-child box bg-dark is-flex-gap-sm is-flex is-flex-column">
+            <div className="card-image mb-2">
                  {posts.pages_thumbnail !== null ? 
-                 <figure class="image is-16by9">
+                 <figure className="image is-16by9">
                   <img src={posts.pages_thumbnail} alt="Placeholder image" className='post-image w-100 h-100'/>
                   </figure>
                   : ""
                   }
                  
               </div>
-                  <p class="title is-3 text-title">{posts.pages_title}</p>
+                  <p className="title is-3 text-title">{posts.pages_title}</p>
                   <div dangerouslySetInnerHTML={createMarkup(posts)} />
                   <div className='is-flex align-center is-flex-gap-md my-3'>
-                  <p class="is-title is-size-7 has-text-grey-lighter">{timeDifference(posts.created_at)}</p>
+                  <p className="is-title is-size-7 has-text-grey-lighter">{timeDifference(posts.created_at)}</p>
    
                   </div>
                 </article>

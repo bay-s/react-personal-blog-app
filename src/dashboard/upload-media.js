@@ -113,9 +113,9 @@ console.log(data);
 
 
     return(
-<div class="modal-card">
- <header class="modal-card-head is-flex justify-between p-2">
- <div class="select is-link is-normal">
+<div className="modal-card">
+ <header className="modal-card-head is-flex justify-between p-2">
+ <div className="select is-link is-normal">
  <select 
         value={selectValue} 
         onChange={openTabs} 
@@ -124,29 +124,29 @@ console.log(data);
     <option value='upload'>Upload</option>
   </select>
 </div>
-<button class="delete" aria-label="close" onClick={props.openModal}></button>
+<button className="delete" aria-label="close" onClick={props.openModal}></button>
 </header>
         {/* START MODAL CONTENT */}
-        <section class="modal-card-body">
+        <section className="modal-card-body">
         {/* UPLOAD TAB */}
 <section className='hide' ref={upload}>
-<form class="file has-name is-boxed is-centered is-info is-flex is-flex-column is-flex-gap-md" onSubmit={uploadImage}>
-  <label class="file-label">
-    <input class="file-input" type="file" name="resume" onChange={ImageChange} />
-    <span class="file-cta">
-      <span class="file-icon">
-        <i class="fa fa-upload"></i>
+<form className="file has-name is-boxed is-centered is-info is-flex is-flex-column is-flex-gap-md" onSubmit={uploadImage}>
+  <label className="file-label">
+    <input className="file-input" type="file" name="resume" onChange={ImageChange} />
+    <span className="file-cta">
+      <span className="file-icon">
+        <i className="fa fa-upload"></i>
       </span>
-      <span class="file-label">
+      <span className="file-label">
         Choose a file…
       </span>
     </span>
-    <span class="file-name">
+    <span className="file-name">
      {images.imgName}
     </span>
   </label>
 <div className={images.hide ? "" : 'hide'} >
-{images.isUpload ?  <button type='submit' class="button is-info " >Save</button> : <button class="button is-link is-loading is-small" disabled>Loading</button>}
+{images.isUpload ?  <button type='submit' className="button is-info " >Save</button> : <button class="button is-link is-loading is-small" disabled>Loading</button>}
 </div>
 <ErrorMessage pesan={images.pesan} error={images.error} sukses={images.sukses}/>
 </form>  
@@ -167,8 +167,8 @@ console.log(data);
 {/*END IMAGE TABS  */}
         </section>
         {/* END MODAL CONTENT */}
-        <footer class="modal-card-foot p-2">
-         <form onSubmit={props.saveImage} className='navbar-end'><button class="button is-info is-small">Set featured image</button></form>
+        <footer className="modal-card-foot p-2">
+         <form onSubmit={props.saveImage} className='navbar-end'><button className="button is-info is-small">Set featured image</button></form>
         </footer>
       </div>
     )

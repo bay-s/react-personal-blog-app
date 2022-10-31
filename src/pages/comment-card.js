@@ -44,8 +44,8 @@ const CommentCard = (props) => {
 
  <div className='bg-dark shadow is-flex is-flex-column is-flex-gap-md p-4'>
  <div className='is-flex align-center is-flex-gap-md'>
- <figure class="image is-32x32">
-  <img class="is-rounded" src={akun} />
+ <figure className="image is-32x32">
+  <img className="is-rounded" src={akun} />
 </figure>
  <h3 className='is-title text-title is-size-7'>
   {comment.author_name}
