@@ -13,8 +13,9 @@ const Header = () => {
     console.log(error);
   }
     return(
-      <nav id="navbar-main" className="navbar shadow bg-dark  p-1 ">
-        <div className="navbar-brand">
+<header className='headers shadow bg-dark p-1'>
+<nav id="navbar-main" className="navbar mx-5 bg-transparent">
+      <div className="navbar-brand">
         <Link className="navbar-item main-title hvr-underline-from-center" to='/'>
     <h3 className='text-title is-title is-size-4 is-bold main-title '>{value.data.site_title == null ? 'Your Website name' : value.data.site_title}</h3>
     </Link>
@@ -58,6 +59,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
+</header>
     )
 }
 

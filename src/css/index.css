@@ -323,6 +323,11 @@ aside.aside {
   backdrop-filter: blur( 10.5px );
   -webkit-backdrop-filter: blur( 10.5px );
   border-radius: 10px;
+  /* transform: translateY(-50px) ; */
+  transition: 500ms;
+  top: 0 !important;
+  position: sticky !important;
+  z-index: 30;
 }
 
 .bg-dark{
@@ -343,7 +348,10 @@ aside.aside {
   backdrop-filter: blur( 5.5px );
   -webkit-backdrop-filter: blur( 5.5px );
 }
-
+.bg-darks{
+  background:#222327 !important; 
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ) !important; 
+}
 /* ====== END HEADER ====== */
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Noto+Sans:wght@500&family=Outfit:wght@300&family=Pacifico&family=Poppins:wght@200&display=swap");
 /* END RESET */
@@ -886,15 +894,23 @@ transition: 250ms;
   transition: 500ms;
 }
 
-@media (max-width:900px){
+.navbar-dropdown .navbar-item:hover {
+  background-color:#312222c0 !important;
+  color: #0a0a0a
+}
+
+@media (max-width:772px){
   .home-container{
     display: flex !important;
     flex-direction: column-reverse !important;
   }
-
  .dashboard-container{
   display: flex !important;
   flex-direction: column-reverse !important;
+ }
+ .media-container{
+  flex-wrap: wrap !important;
+  box-sizing: border-box !important;
  }
 }
 

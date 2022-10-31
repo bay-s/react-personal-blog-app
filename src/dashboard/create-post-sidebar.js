@@ -40,11 +40,11 @@ const PostSidebar = (props) => {
 <aside className='is-flex is-flex-column is-flex-gap-md '>
 <section class="accordions">
   <article class="accordion">
-  <div class="accordion-header bg-dark">
+  <div class="accordion-header bg-darks shadow">
       <p className='p-1'>Category</p>
       <button class="toggle" aria-label="toggle" data-collapse='tags'  onClick={openCollapse}></button>
     </div>
-    <div class="accordion-body bg-dark">
+    <div class="accordion-body bg-darks shadow">
       <ul className='is-flex is-flex-column p-3'>
       {category.length < 1 ? "" : category.map((m,index) => {
       return <li>
@@ -76,11 +76,11 @@ const PostSidebar = (props) => {
     </div>
 </article>
   <article class="accordion">
-  <div class="accordion-header bg-dark">
+  <div class="accordion-header bg-darks ">
       <p className='p-1'>Tags</p>
       <button class="toggle" aria-label="toggle" data-collapse='tags'  onClick={openCollapse}></button>
     </div>
-    <div class="accordion-body bg-dark text-white">
+    <div class="accordion-body bg-darks text-white">
   <div className='is-flex is-flex-gap-md align-center p-3 flex-wrap'>
       {props.methods.tagArr.length < 1 ? "" : props.methods.tagArr.map((m,index) => {
         console.log(m)
@@ -99,11 +99,11 @@ const PostSidebar = (props) => {
     </div>
   </article>
   <article class="accordion">
-  <div class="accordion-header bg-dark">
+  <div class="accordion-header bg-darks ">
       <p className='p-1'>Features Image</p>
       <button class="toggle" aria-label="toggle" data-collapse='images'  onClick={openCollapse}></button>
    </div>
-    <div class="accordion-body bg-dark is-flex is-flex-column is-flex-gap-md">
+    <div class="accordion-body bg-dark is-flex is-flex-column is-flex-gap-md bg-darks ">
     <button className='button is-large text-center p-5 w-100' onClick={props.data.openModal}>
       Features Image
     </button>

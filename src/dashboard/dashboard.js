@@ -26,7 +26,7 @@ const string_id = id.toString().toLowerCase()
 <Sidebar />
 </div>
 {/* END SIDEBAR */}
-<div className='column p-0 px-3'>
+<div className='column is-10 p-0 px-3'>
 <div className={string_id === 'index' ? 'box bg-dark shadow' : 'hide' }>
 <h3 className='is-bold is-title is-size-4 text-title capital'>{string_id === 
 'index' ? "Dashboard" : string_id}</h3>

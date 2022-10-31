@@ -70,16 +70,14 @@ console.log(data);
 
 
     return(
-<div className='box p-1 bg-dark border-primary'>
-<section className='p-3' ref={image}>
+<div className='box p-1 bg-dark shadow '>
+<section className='is-flex align-center is-flex-gap-md media-container border-primary p-3' ref={image}>
 {/* STARTIMAGE SELECTION */}
-<div className='is-flex align-center is-flex-gap-md'>
      {images.media.length < 1 ? "" : images.media.map(img => {
       return  <figure class="image is-128x128 is-clickable" tabindex="-1" id='image-media'>
   <img  src={getPublicUrls(img.name)} className='h-100 w-100 media' onClick={props.selectImage}/>
 </figure>
      })}
-</div>
 {/* END IMAGE SELECTION */}
  </section>
 {/*END IMAGE TABS  */}
