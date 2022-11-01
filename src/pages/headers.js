@@ -27,7 +27,7 @@ const fetchSiteInfo = async () => {
   const { data, error } = await supabase
   .from('blog-info')
   .select()
-  .eq('id',value.data.id)
+  .eq('id',2)
   if(error) console.log(error.message);
   else {
     setSiteInfo(data[0])
