@@ -89,7 +89,7 @@ render(){
  <Headers />
 {
   this.props.isLogin ? <Navigate to="/" replace={true} /> :
-<div className='container mt-5 pt-4'>
+<div className='container mt-5 pt-4 mx-5'>
             <div className='columns is-centered '>
 <div className='column is-6 box p-0 bg-dark'>
 <div className='banner' style={banner}></div>
