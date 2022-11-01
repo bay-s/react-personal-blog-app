@@ -52,7 +52,7 @@ const Sidebar = () => {
             <li>
             <Link to='/dashboard/edit-profile/' class="has-icon">
                 <span class="icon"><i class="mdi mdi-account-circle"></i></span>
-                <span class="menu-item-label">Profile</span>
+                <span class="menu-item-label">Setting</span>
             </Link>
             </li>
             <li>

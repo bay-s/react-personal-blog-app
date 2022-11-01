@@ -11,10 +11,11 @@ const Home = () => {
  const [post,setPost] = useState([])
  const [loader,setLoader] = useState(true)
  const [totalPost,setTotalPost] = useState(0)
+ const [test,setTest] = useState(0)
  const [value,setValue] = useState({
   page:0,
   leftPage:totalPost,
-  counts:1
+  counts:3
   })
 
  useEffect(() => {
@@ -38,31 +39,7 @@ const Home = () => {
   }if(error) console.log(error.message);
  }
 
- const createMarkup = (posts) => {
-  return {__html:posts.post_content};
-}
-
-const nextPage = (e) => {
-  e.preventDefault()
-  setValue({...value,
-    page:value.page + 2,
-    counts:value.counts + 2,
-    leftPage:totalPost - value.counts
-  })
-
-}
-
-const prevPage = (e) => {
-  e.preventDefault()
-  if(value.counts <= 1){
-
-  }else{
-    setValue({...value,
-      page:value.page - 2,
-      counts:value.counts - 2
-    })
-  }
-}
+ 
     return(
      <>
       <Headers />
@@ -81,7 +58,7 @@ const prevPage = (e) => {
   
  {/* PAGINATION */}
  <div className='py-5 px-4'>
-<Pagination totalPost={totalPost} value={value} prevPage={prevPage} nextPage={nextPage}/>
+<Pagination setValue={setValue} totalPost={totalPost} value={value} />
 </div>
 {/* END PAGINATION */}
 </div>

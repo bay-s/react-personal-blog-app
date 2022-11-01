@@ -8,14 +8,22 @@ import PagesList from './pages-list';
 const Pages = (props) => {
   const [post,setPost] = useState([])
   const [totalPost,setTotalPost] = useState(0)
+  const [value,setValue] = useState({
+    page:0,
+    leftPage:totalPost,
+    counts:4
+    })
+  
   useEffect(() => {
    fetchPost()
-  },[])
+  },[value.page,value.counts])
  
   const fetchPost = async () => {
     const { data, error ,count} = await supabase
    .from('pages')
    .select('*', { count: 'exact' })
+   .order("id", { ascending: true })
+   .range(value.page,value.counts)
    if(data){
      console.log(data);
      setTotalPost(count)
@@ -57,7 +65,7 @@ const Pages = (props) => {
             </table>
           </div>
 {/* PAGINATION */}
-{/* <Pagination totalPost={totalPost}/> */}
+<Pagination setValue={setValue} totalPost={totalPost} value={value} />
 {/* END PAGINATION */}
         </div>
       </div>

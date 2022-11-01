@@ -12,7 +12,7 @@ const Posts = (props) => {
   const [value,setValue] = useState({
     page:0,
     leftPage:totalPost,
-    counts:1
+    counts:4
     })
   
   useEffect(() => {
@@ -32,27 +32,7 @@ const Posts = (props) => {
    }if(error) console.log(error.message);
   }
  
-  const nextPage = (e) => {
-    e.preventDefault()
-    setValue({...value,
-      page:value.page + 2,
-      counts:value.counts + 2,
-      leftPage:totalPost - value.counts
-    })
-  
-  }
-  
-  const prevPage = (e) => {
-    e.preventDefault()
-    if(value.counts <= 1){
-  
-    }else{
-      setValue({...value,
-        page:value.page - 2,
-        counts:value.counts - 2
-      })
-    }
-  }
+
     return(
 <>
 <div className='box shadow is-flex align-center is-flex-gap-md bg-dark'>
@@ -63,15 +43,6 @@ const Posts = (props) => {
     {/* start table */}
 <section class="section is-main-section p-2">
 <div class="card has-table ">
-      <header class="card-header ">
-        <p class="card-header-title">
-          <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
-          Clients
-        </p>
-        <a href="#" class="card-header-icon">
-          <span class="icon"><i class="mdi mdi-reload"></i></span>
-        </a>
-      </header>
       <div class="card-content ">
         <div class="b-table has-pagination">
           <div class="table-wrapper has-mobile-cards">
@@ -86,7 +57,7 @@ const Posts = (props) => {
                 <th>Author</th>
                 <th>Categories</th>
                 <th>Tags</th>
-                <th onClick={nextPage}>Created</th>
+                <th >Created</th>
                 <th></th>
               </tr>
               </thead>
@@ -98,7 +69,9 @@ const Posts = (props) => {
             </table>
           </div>
 {/* PAGINATION */}
-<Pagination totalPost={totalPost} value={value} prevPage={prevPage} nextPage={nextPage}/>
+<div className='py-5'>
+<Pagination setValue={setValue} totalPost={totalPost} value={value} />
+</div>
 {/* END PAGINATION */}
         </div>
       </div>

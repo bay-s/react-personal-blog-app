@@ -305,6 +305,7 @@ html{
   z-index: 30;
 }
 
+
 aside.aside {
   /* display: none; */
   position: fixed;
@@ -324,12 +325,16 @@ aside.aside {
   -webkit-backdrop-filter: blur( 10.5px );
   border-radius: 10px;
   /* transform: translateY(-50px) ; */
-  transition: 500ms;
   top: 0 !important;
   position: sticky !important;
   z-index: 30;
+  transition: 250ms;
 }
 
+.headers.fixed-header{
+transform: translateY(-80px);
+  transition: 550ms;
+}
 .bg-dark{
   background: rgba(48, 48, 56, 0.692) !important;
   /* background:#222327 !important; */
@@ -485,6 +490,9 @@ border: none !important;
 
 .border-butt{
   border-bottom: 2px solid rgba(255, 255, 255, 0.349) !important;
+}
+.border-butt-dark{
+  border-bottom: 2px solid rgba(48, 48, 56, 0.692) !important;
 }
 
 .border-primary{

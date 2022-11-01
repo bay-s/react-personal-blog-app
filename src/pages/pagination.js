@@ -3,11 +3,42 @@ import React from 'react'
 const Pagination = (props) => {
    const totalPage = props.totalPost - props.value.page
    const totalPages =  props.totalPost  / 2
+
+  const test = (e) => {
+    e.preventDefault()
+
+    props.setValue({...props.value,
+      page:props.value.page + 1
+    })
+    console.log(props.value);
+  }
+
+  const nextPage = (e) => {
+  e.preventDefault()
+  props.setValue({... props.value,
+    page: props.value.page + 4,
+    counts: props.value.counts + 4,
+    leftPage: props.totalPost -  props.value.counts
+  })
+
+}
+
+const prevPage = (e) => {
+  e.preventDefault()
+  if( props.value.counts <= 1){
+
+  }else{
+    props.setValue({... props.value,
+      page: props.value.page - 4,
+      counts: props.value.counts - 4
+    })
+  }
+}
     return(
       
-<nav className="is-flex justify-center pagination is-medium " role="navigation" aria-label="pagination">
-  <button className={props.value.page <= 1 ? "pagination-previous is-disabled" : "pagination-previous"} onClick={props.prevPage}>Previous</button>
-  <button className={totalPage <= 2 ? "pagination-next  is-disabled" : "pagination-next"} onClick={totalPage <= 2 ? '' : props.nextPage}>Next page
+<nav className="is-flex justify-center pagination is-medium" role="navigation" aria-label="pagination">
+  <button className={props.value.page <= 1 ? "pagination-previous is-disabled" : "pagination-previous hvr-sweep-to-right text-title is-outlined border-primary bg-transparent"} onClick={prevPage }>Previous</button>
+  <button className={totalPage <= 2 ? "pagination-next  is-disabled" : "pagination-next hvr-sweep-to-right text-title is-outlined border-primary bg-transparent"} onClick={totalPage <= 2 ? '' : nextPage}>Next page
   </button>
 </nav>
     )

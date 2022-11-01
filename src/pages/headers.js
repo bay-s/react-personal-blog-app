@@ -18,9 +18,26 @@ useEffect(() => {
     }if(error) console.log(error);
      }
      fetchMenu()
-
+     window.addEventListener('scroll',scrolls)
 },[])
 
+let y = window.scrollX
+const header = useRef()
+
+
+const scrolls = (e) => {
+    let x = window.scrollY;
+    const headers = header.current
+    if (x > y) {
+      headers.classList.add("fixed-header");
+      console.log("tes");
+    }else {
+      headers.classList.remove("fixed-header");
+      console.log("Tesss");
+    }
+    
+y = x;
+  }
 
 const menuList = menus.map(menus => {
   return menus.menu_item.map((menu ,index)=> {
@@ -28,7 +45,7 @@ const menuList = menus.map(menus => {
   })
 })
     return(
-<header className='headers p-2 bg-dark'>
+<header className='headers p-2 bg-dark' ref={header}>
 <nav className="navbar mx-5 is-flex  align-center justify-between bg-transparent container" role="navigation" aria-label="main navigation">
   <div className="navbar-brand">
     <Link className="navbar-item main-title hvr-underline-from-center" to='/'>

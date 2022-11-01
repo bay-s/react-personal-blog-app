@@ -5,7 +5,6 @@ import supabase from '../supabase-config';
 import RegisterPageLeft from './register-left';
 import Headers from '../pages/headers';
 
-
 class RegisterPages extends React.Component{
   constructor(){
     super()
@@ -116,6 +115,9 @@ class RegisterPages extends React.Component{
       })
     }
   }
+
+
+
      render(){
 
       return(
