@@ -123,18 +123,18 @@ class RegisterPages extends React.Component{
       return(
         <>
           <Headers />
-          <section className='container mt-5 pt-3'>
+<section className='container mt-3 mx-auto'>
 <div className='columns is-centered is-multiline is-gapless'>
 {/* start col left */}
-<div className='column is-5 p-0 box'>
+<div className='column is-5 box bg-dark '>
  <RegisterPageLeft pesan={this.state.pesan} error={this.state.error} sukses={this.state.sukses}/>
 </div>
  {/* end col left */}
-<div className='column is-5 p-0 box'>
+<div className='column is-5  box bg-dark'>
 <RegisterForm RegisterUser={this.RegisterUser} handlerChange={this.handlerChange} isSubmit={this.state.isSubmit} />
  <div class="field is-flex is-flex-gap-md is-justify-content-center pb-4">
-   <p className='is-title'>Already have an Account ?</p>
-        <Link to='/login/' className='has-text-info has-text-weight-bold is-title'>Login</Link>
+   <p className='is-title text-white'>Already have an Account ?</p>
+        <Link to='/login/' className='has-text-primary has-text-weight-bold is-title'>Login</Link>
  </div>
    </div>
    {/* END COLUMN RIGHT */}

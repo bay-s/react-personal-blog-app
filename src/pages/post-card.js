@@ -6,7 +6,7 @@ import img from '../img/no-image.png'
 const PostCard = (props) => {
 
     return(
-        <div className="tile is-parent px-3 p-0 my-4">
+        <div className="tile is-parent px-3 p-0 mb-4 ">
         <article className="tile is-child box bg-dark is-flex-gap-sm is-flex is-flex-column">
          <div className="card-image mb-2">
             <figure className="image is-2by1">

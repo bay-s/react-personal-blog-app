@@ -101,7 +101,7 @@ const data = {
 <h3 className='is-bold is-title is-size-4 text-title'>Menus</h3>
 </div>
 {/* END HEADER COLUMN */}
-<div className='is-flex is-flex-gap-md'>
+<div className='is-flex is-flex-gap-md sidebar-container'>
 <MenusLeft openCollapse={openCollapse} data={data}/>
 <MenusRight openCollapse={openCollapse} data={data} />
 </div>
