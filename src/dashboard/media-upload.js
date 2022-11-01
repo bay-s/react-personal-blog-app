@@ -76,7 +76,7 @@ const MediaUpload = (props) => {
 <span class="justify-center mx-auto text-white py-2">
   Upload images here
 </span>
- <button class="modal-close is-large text-white" aria-label="close" onClick={props.openTabs}></button>
+ <span class="modal-close is-large text-white is-clickable" aria-label="close" onClick={props.openTabs}></span>
 
 <form class="file has-name is-boxed is-info is-flex is-flex-column is-flex-gap-md" onSubmit={uploadImage}>
   <label class="file-label">
