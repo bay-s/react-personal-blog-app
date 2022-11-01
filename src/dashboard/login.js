@@ -91,12 +91,12 @@ render(){
   this.props.isLogin ? <Navigate to="/" replace={true} /> :
 <div className='container mt-5 pt-4 mx-5'>
             <div className='columns is-centered '>
-<div className='column is-6 box p-0 bg-dark'>
+<div className='column is-6 box p-0 '>
 <div className='banner' style={banner}></div>
 <LoginForm isSubmit={this.state.isSubmit} userLogin={this.userLogin} handlerChange={this.handlerChange}  sukses={this.state.sukses} error={this.state.error} pesan={this.state.pesan} />
 <div class="field is-flex justify-between p-3">
    <div className='is-flex is-flex-gap-md'>
-   <p className='is-title is-size-7 text-white'>Don`t have an Account ?</p>
+   <p className='is-title is-size-7'>Don`t have an Account ?</p>
    <Link to='/register/' className='has-text-primary  is-title is-size-7'>Sign Up</Link>
    </div>
    <Link to='/reset-password/' className='has-text-primary  is-title is-size-7'>Forgout your password ?</Link>
