@@ -26,7 +26,7 @@ const Main = (props) => {
         <div class="level-item has-text-centered ">
             <div className=''>
               <p class="heading is-size-6 text-white">Posts</p>
-              <p class="title text-white">{value.data.total_post == null ? "0" : value.data.total_post +1}</p>
+              <p class="title text-white">{value.data.total_post == null ? "0" : value.data.total_post}</p>
             </div>
         </div>
         </div>
@@ -50,7 +50,7 @@ const Main = (props) => {
         <div class="level-item has-text-centered">
             <div>
               <p class="heading is-size-6 text-white">Pages</p>
-              <p class="title text-white">{value.data.total_pages == null ? "0" : value.data.total_pages +1}</p>
+              <p class="title text-white">{value.data.total_pages == null ? "0" : value.data.total_pages}</p>
             </div>
         </div>
         </div>
