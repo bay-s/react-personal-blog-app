@@ -38,18 +38,25 @@ const fetchPost = async () => {
  if(data){
    setPost(data)
    console.log(data);
+   console.log(data.length < 1);
    if(data.length < 1) {
     setMessage({...message,
        pesan:'Post not found',
        error:true
         })
-}else{
+   }else{
     setMessage({
         pesan:``,
         error:false,
       })
 }
- }if(error) console.log(error.message);
+ }if(error) {
+  setMessage({...message,
+    pesan:'Post not found',
+    error:true
+     })
+  console.log(error.message);
+    }
 }
 
 
