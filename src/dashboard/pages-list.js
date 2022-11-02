@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AppContext } from '../App'
 import supabase from '../supabase-config'
 import Author from './author'
 
 const PagesList = (props) => {
-
+  const {value} = useContext(AppContext)
   const deletePages = async (e) => {
     e.preventDefault()
     const id = parseInt(e.target.dataset.target)
@@ -16,12 +17,19 @@ const PagesList = (props) => {
        .select()
        if(data)  {
         alert("Delete post success")
+        decrementPages()
         window.location.reload()
       }
        if(error) alert(`Something wrong ${error.message}`)
     }
   }
 
+  const decrementPages = async () => {
+    const { data, error } = await supabase
+    .rpc('decrementpages', { x: 1, row_id:value.data.id })
+    if(error) console.log(error.message);
+    else console.log(data);
+   }
     return(
 props.post.length < 1 ? "" : props.post.map((posts,index) => {
 return   <tr>

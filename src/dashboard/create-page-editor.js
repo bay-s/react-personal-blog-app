@@ -60,6 +60,7 @@ const PagesEditor = (props) => {
       .select()
       if(data){
         console.log(data);
+        incrementPages()
         setMessage({
           pesan:`Create Post Success`,
           error:false,
@@ -99,7 +100,12 @@ const PagesEditor = (props) => {
       }
     };
 
-
+   const incrementPages = async () => {
+    const { data, error } = await supabase
+    .rpc('incrementpages', { x: 1, row_id:value.data.id })
+    if(error) console.log(error.message);
+    else console.log(data);
+   }
     return(
         <div className='columns is-multiline'>
 <div className='column is-9  '>

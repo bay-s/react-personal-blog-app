@@ -34,7 +34,7 @@ function App() {
       if (event == 'SIGNED_IN') {
         // console.log('SIGNED_IN', session)
         const { data, error } = supabase.auth.setSession(session.refresh_token)
-        setIsLogin(true)
+        // setIsLogin(true)
         setUsers(user)
         console.log("log int");
         // console.log(session.refresh_token);
@@ -51,9 +51,6 @@ function App() {
       }
     })
 
-if(data.is_admin){
-  console.log("ADMIN");
-}
   },[])
 
   const openModal = e => {
@@ -66,7 +63,6 @@ if(data.is_admin){
     if(user){
       console.log("user logged in");
       console.log(user);
-      setIsLogin(true)
       setUsers(user)
     }else{
       console.log("not login");
@@ -85,9 +81,8 @@ if(data.is_admin){
       console.log(error);
     }
     if(data){
-      setIsLogin(true)
-      console.log(data);
       setData(data)
+      const check = data.is_admin ? setIsLogin(true)  : setIsLogin(false) 
     }
   }
 
@@ -98,7 +93,6 @@ if(data.is_admin){
     isLogin
   }
 
-  console.log(isLogin);
   return (
 <AppContext.Provider value={{value}}>
 <BrowserRouter>

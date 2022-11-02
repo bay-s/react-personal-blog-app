@@ -82,6 +82,7 @@ const PostEditor = (props) => {
         .select();
       if (data) {
         console.log(data);
+        incrementPosts()
         setIsSubmit(false);
         setMessage({
           pesan: `Create Post Success`,
@@ -178,6 +179,13 @@ const PostEditor = (props) => {
         );
       }
     };
+
+    const incrementPosts = async () => {
+      const { data, error } = await supabase
+      .rpc('increment', { x: 1, row_id:value.data.id })
+      if(error) console.log(error.message);
+      else console.log(data);
+     }
 
   const methods = {
     removeTagArr,

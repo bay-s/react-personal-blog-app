@@ -20,21 +20,19 @@ const PostList = (props) => {
        .select()
        if(data)  {
         alert("Delete post success")
-        postDecrement() 
+        decrementPosts() 
         window.location.reload()
       }
        if(error) alert(`Something wrong ${error.message}`)
     }
   }
 
-  const postDecrement = async (e) => {
-    e.preventDefault()
-    console.log("tes");
-    const { data, error } = await supabase.rpc('post_inc', { x: 1, row_id: value.data.id })
-
-  if (error) console.error(error)
-  else console.log(data)
-  }
+  const decrementPosts = async () => {
+    const { data, error } = await supabase
+    .rpc('decrement', { x: 1, row_id:value.data.id })
+    if(error) console.log(error.message);
+    else console.log(data);
+   }
     return(
 props.post.length < 1 ? "" : props.post.map((posts ,index) => {
 return   <tr>

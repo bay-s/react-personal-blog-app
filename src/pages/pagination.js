@@ -4,15 +4,6 @@ const Pagination = (props) => {
    const totalPage = props.totalPost - props.value.page
    const totalPages =  props.totalPost  / 2
 
-  const test = (e) => {
-    e.preventDefault()
-
-    props.setValue({...props.value,
-      page:props.value.page + 1
-    })
-    console.log(props.value);
-  }
-
   const nextPage = (e) => {
   e.preventDefault()
   props.setValue({... props.value,
