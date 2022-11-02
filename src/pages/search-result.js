@@ -20,10 +20,6 @@ const [message,setMessage] = useState({
 })
  useEffect(() => {
     searchPost()
-  const timer = setTimeout(() => {
-    setLoader(false)
-    }, 1000);
-    return () => clearTimeout(timer);
  },[post])
 
  const searchPost = async () =>{
@@ -43,14 +39,21 @@ const [message,setMessage] = useState({
             setMessage({
                 pesan:``,
                 error:false,
-              })
+           })
+           const timer = resetTimer()
+           return () => clearTimeout(timer);
         }
     }if(error){
       console.log(`404 not found ${error.message}`);
     }
    }
 
- 
+ const resetTimer = () => {
+   setTimeout(() => {
+    setLoader(false)
+    console.log('resetto');
+    }, 1000);
+ }
     return(
      <>
       <Headers />
