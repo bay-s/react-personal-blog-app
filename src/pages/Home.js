@@ -57,9 +57,7 @@ const Home = () => {
   {/* END POST */}
   
  {/* PAGINATION */}
- <div className='py-5 px-4'>
 <Pagination setValue={setValue} totalPost={totalPost} value={value} />
-</div>
 {/* END PAGINATION */}
 </div>
         {/* end column card */}

@@ -69,9 +69,7 @@ const Posts = (props) => {
             </table>
           </div>
 {/* PAGINATION */}
-<div className='py-5'>
 <Pagination setValue={setValue} totalPost={totalPost} value={value} />
-</div>
 {/* END PAGINATION */}
         </div>
       </div>
