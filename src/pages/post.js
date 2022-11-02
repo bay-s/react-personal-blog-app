@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import supabase from '../supabase-config'
 import AnimasiSkeleton from './animasi-skeleton'
 import Headers from './headers'
@@ -8,13 +8,17 @@ import CommentForm from './comment-form'
 import HasComment from './has_comment'
 import PostCardSingle from './post-card-single'
 import CommentCard from './comment-card'
-
+import ErrorMessage from '../dashboard/error-message'
 
 const PostDetail = (props) => {
 const {id} = useParams()
 const [post,setPost] = useState([])
 const [loader,setLoader] = useState(true)
 const [dataComment,setDataComment] = useState([])
+const [message,setMessage] = useState({
+  pesan:'',
+  error:false
+})
 
 useEffect(() => {
  fetchPost()
@@ -33,6 +37,18 @@ const fetchPost = async () => {
  .eq('id',id)
  if(data){
    setPost(data)
+   console.log(data);
+   if(data.length < 1) {
+    setMessage({...message,
+       pesan:'Post not found',
+       error:true
+        })
+}else{
+    setMessage({
+        pesan:``,
+        error:false,
+      })
+}
  }if(error) console.log(error.message);
 }
 
@@ -41,7 +57,7 @@ const postCard = post.length < 1 ? "" : post.map(posts => {
   return <PostCardSingle posts={posts}/>
  })
 
-
+console.log(post.length < 1);
     return(
         <>
         <Headers />
@@ -52,15 +68,14 @@ const postCard = post.length < 1 ? "" : post.map(posts => {
           </div>
 <div className='column p-0'>
   {/* start post */}
+<ErrorMessage pesan={message.pesan} isError={message.error} sukses={false}/>
 {loader ? <AnimasiSkeleton /> : postCard}
     {/* END POST */}
-    {/* DISPLAY COMMENT */}
+{/* DISPLAY COMMENT */}
 
 <article className='section is-main-section px-5 py-1'>
-<h3 className={dataComment.length < 1 ? 'hide' : 'text-title is-title p-2'}>
-Leave a Comment
-</h3>
-{dataComment.length < 1 ? "" :
+
+{dataComment == undefined ? "" :
 dataComment.map(comment => {
   return <CommentCard comment={comment}/>
 })
@@ -69,7 +84,12 @@ dataComment.map(comment => {
     {/* END DISPLAY */}
    
     {/* START COMMENT FORM */}
-    <CommentForm id={id}/>
+<div className={post.length < 1 ? "hide" : ''}>
+<h3 className={post.length < 1 ? 'hide' : 'text-title is-title px-3'}>
+Leave a Comment
+</h3>
+<CommentForm id={id}/>
+</div>
     {/* END COMMENT FORM */}
 </div>
           {/* end column card */}

@@ -14,15 +14,13 @@ const [message,setMessage] = useState({
 })
 const [datas,setDatas] = useState({
   username:'',
-  fullname:'',
-  website_name:''
+  fullname:''
 })
 console.log(value);
 useEffect(() => {
   setDatas({...datas,
      username:value.data.username,
-     fullname:value.data.fullname,
-     website_name:value.data.site_title
+     fullname:value.data.fullname
     })
 },[])
 const handlerChange = (e) => {
@@ -52,8 +50,7 @@ console.log(value);
   .from('users')
   .update({
      username:datas.username,
-     fullname:datas.fullname,
-     site_title:datas.website_name
+     fullname:datas.fullname
     })
   .eq('id',value.data.id)
   .select()
@@ -89,13 +86,6 @@ console.log(value);
 <label class="label text-white">Username</label>
 <div class="control">
 <input class="input  is-link" type="text" name='username' defaultValue={value.data.username} onChange={ handlerChange }/>
-</div>
-</div>
-
-<div class="field">
-<label class="label text-white">Site title</label>
-<div class="control">
-<input class="input  is-link" type="text" name='website_name' defaultValue={value.data.site_title} onChange={handlerChange}/>
 </div>
 </div>
 

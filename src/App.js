@@ -14,6 +14,7 @@ import EditPost from "./dashboard/edit-post"
 import EditPage from "./dashboard/edit-page"
 import GetPost from "./dashboard/get-post-by"
 import PostByCategory from "./pages/post-by-category"
+import SearchResult from "./pages/search-result"
 
 
 
@@ -110,6 +111,7 @@ if(data.is_admin){
       <Route path='/dashboard/create-page/' element={isLogin ? <CreatePage /> : <LoginPage  isLogin={isLogin}/>} />
       <Route path='/dashboard/edit-post/:id' element={isLogin ? <EditPost /> : <LoginPage  isLogin={isLogin}/>} />
       <Route path='/dashboard/edit-page/:id' element={isLogin ? <EditPage /> : <LoginPage  isLogin={isLogin}/>} />
+      <Route path='/posts/:id' element={<SearchResult />} />
       <Route path='/pages/:id' element={<Pages />} />
       <Route path='/post/category-name/:id' element={<GetPost />} />
       <Route path='/posts/category-name/:id' element={<PostByCategory />} />
