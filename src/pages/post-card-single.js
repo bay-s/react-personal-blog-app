@@ -4,6 +4,7 @@ import PostCat from '../dashboard/post-cat'
 import PostTag from '../dashboard/post-tag'
 import timeDifference from './timestamp'
 import img from '../img/no-image.png'
+import PostPreview from './next-post'
 
 
 const PostCardSingle = (props) => {
@@ -12,11 +13,9 @@ const PostCardSingle = (props) => {
         return {__html:posts.post_content};
        }
        
-       const background = {
-        background:`url(${posts.post_thumbnail})`
-       }
+    
     return(
-        <div className="tile is-parent" key={posts.id}>
+  <div className="tile is-parent" key={posts.id}>
        <article className="tile is-child box bg-dark is-flex-gap-sm is-flex is-flex-column ">
 <div className="card-image mb-2 feature-image-container bertasbihlah">
 <figure className="image is-16by9 feature-image" >
@@ -38,12 +37,16 @@ const PostCardSingle = (props) => {
 <Author id={posts.author_id}/>
 </div>
 <div className='is-flex align-center is-flex-gap-md'>
-             <PostCat cat={posts.post_cat}/>
+   <PostCat cat={posts.post_cat}/>
 </div>
  </header>
  {/* END POST CAPTION */}
  <div className='my-3' dangerouslySetInnerHTML={createMarkup(posts)} />
-        </article>
+ <hr />
+ {/* NEXT POST */}
+<PostPreview id={posts.id} key={posts.id}/>
+{/* PREV  POST */}
+      </article>
 </div>
     )
 }

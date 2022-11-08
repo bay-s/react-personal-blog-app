@@ -21,7 +21,9 @@ const PostCard = (props) => {
           </div>
               <p className="title is-3"><Link to={`/post/${props.posts.id}`} className='text-title'>{props.posts.post_title}</Link></p>
               <p className="subtitle is-7 has-text-grey">{timeDifference(props.posts.created_at)}</p>
-              <p className="subtitle is-6 text-white lh-md text-ellips">{props.posts.the_excerpt}</p>
+              <p className="subtitle is-6 text-white lh-md text-ellips">{props.posts.the_excerpt}
+              &hellip;
+              </p>
               {/* <div dangerouslySetInnerHTML={createMarkup(posts)} /> */}
               <Link to={`/post/${props.posts.id}`} className='button hvr-sweep-to-right  is-outlined border-primary bg-transparent navbar-start'>
               Read More

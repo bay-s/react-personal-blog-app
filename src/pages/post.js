@@ -26,7 +26,7 @@ useEffect(() => {
   setLoader(false)
   }, 1000);
   return () => clearTimeout(timer);
-},[])
+},[post])
 
 const fetchPost = async () => {
  const comments = await HasComment(id);
@@ -61,7 +61,7 @@ const fetchPost = async () => {
 
 
 const postCard = post.length < 1 ? "" : post.map(posts => {
-  return <PostCardSingle posts={posts}/>
+  return <PostCardSingle posts={posts} key={post}/>
  })
 
 console.log(post.length < 1);

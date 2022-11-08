@@ -17,11 +17,11 @@ const EditPageSidebar = (props) => {
 <aside className='is-flex is-flex-column is-flex-gap-md '>
 <section class="accordions">
   <article class="accordion">
-  <div class="accordion-header bg-dark">
+  <div class="accordion-header bg-darks">
       <p className='p-1'>Features Image</p>
       <button class="toggle" aria-label="toggle" data-collapse='images'  onClick={openCollapse}></button>
    </div>
-    <div class="accordion-body bg-dark is-flex is-flex-column is-flex-gap-md">
+    <div class="accordion-body bg-dark is-flex is-flex-column is-flex-gap-md bg-darks">
     <button className='button is-large text-center p-5 w-100' onClick={props.data.openModal}>
       Features Image
     </button>
