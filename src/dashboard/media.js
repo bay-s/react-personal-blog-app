@@ -27,7 +27,7 @@ const MediaLibrary = (props) => {
       }
     return(
 <>
-<div className='box shadow is-flex align-center is-flex-gap-md bg-dark'>
+<div className='box is-flex align-center is-flex-gap-md bg-dark'>
 <h3 className='is-bold is-title is-size-4 text-title'>Media Library</h3>
 <button  className='button hvr-sweep-to-right is-outlined border-primary bg-transparent text-title is-small' onClick={ openTabs}>Add New</button>
 </div>

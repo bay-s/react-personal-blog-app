@@ -40,8 +40,8 @@ const Pages = (props) => {
 
 {/* start table */}
 <section class="section is-main-section p-2">
-<div class="card has-table">
-      <div class="card-content">
+<div class="card has-table ">
+      <div class="card-content ">
         <div class="b-table has-pagination">
           <div class="table-wrapper has-mobile-cards">
             <table class="table is-fullwidth is-striped is-hoverable is-fullwidth">

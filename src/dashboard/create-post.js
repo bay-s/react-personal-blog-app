@@ -59,9 +59,8 @@ const data = {
 // }
 
 return(
-<div id="app">
-<Header />
-<div class="container is-fluid my-5 pt-3 ">
+
+<div class="container is-fluid my-3 pt-3 ">
 <div className='columns is-multiline'>
 {/* START SIDEBAR */}
 <div className='column is-2 bg-dark'>
@@ -75,7 +74,7 @@ return(
 {/* END COLUMN RIGHT*/}
 </div>
 {/* end columns */}
-</div>
+
 {/* end container */}
 
     {/* modal */}

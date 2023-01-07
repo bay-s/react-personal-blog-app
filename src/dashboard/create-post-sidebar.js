@@ -40,11 +40,11 @@ const PostSidebar = (props) => {
 <aside className='is-flex is-flex-column is-flex-gap-md '>
 <section class="accordions">
   <article class="accordion">
-  <div class="accordion-header bg-darks shadow">
+  <div class="accordion-header bg-darks">
       <p className='p-1'>Category</p>
       <button class="toggle" aria-label="toggle" data-collapse='tags'  onClick={openCollapse}></button>
     </div>
-    <div class="accordion-body bg-darks shadow">
+    <div class="accordion-body bg-darks">
       <ul className='is-flex is-flex-column p-3'>
       {category.length < 1 ? "" : category.map((m,index) => {
       return <li>

@@ -4,10 +4,10 @@ function LoginForm(props){
 
     return(
         <form className=' is-flex is-flex-direction-column is-flex-gap-md p-3' onSubmit={props.userLogin}>
-        <p class="modal-card-title py-3 is-size-3 main-title text-title">Login</p>
+        <p class="modal-card-title py-3 is-size-3 main-title text-white">Login</p>
              <div class="field">
     <p class="control has-icons-left has-icons-right">
-    <input class="input is-large bg-dark text-white" type="email" name='email' placeholder="Email" onChange={props.handlerChange}/>
+    <input class="input is-large bg-transparent text-white" type="email" name='email' placeholder="Email" onChange={props.handlerChange}/>
     <span class="icon is-small is-left">
     <i class="fa fa-envelope"></i>
     </span>
@@ -18,7 +18,7 @@ function LoginForm(props){
     </div>
     <div class="field ">
     <p class="control has-icons-left">
-    <input class="input is-large bg-dark text-white" type="password" name='password' placeholder="Password" onChange={props.handlerChange}/>
+    <input class="input is-large bg-transparent text-white" type="password" name='password' placeholder="Password" onChange={props.handlerChange}/>
     <span class="icon is-small is-left">
     <i class="fa fa-lock"></i>
     </span>

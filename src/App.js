@@ -15,6 +15,8 @@ import EditPage from "./dashboard/edit-page"
 import GetPost from "./dashboard/get-post-by"
 import PostByCategory from "./pages/post-by-category"
 import SearchResult from "./pages/search-result"
+import LandingPage from "./pages/landing-page"
+import Headers from "./pages/headers"
 
 
 
@@ -96,9 +98,9 @@ function App() {
   return (
 <AppContext.Provider value={{value}}>
 <BrowserRouter>
-      {/* <Headers /> */}
-      <Routes>
-      <Route path='/' element={<Home />} /> 
+      <Headers />
+    <Routes>
+      <Route path='/' element={<LandingPage />} /> 
       <Route path='/post/:id' element={<PostDetail />} /> 
       <Route path='/dashboard/:id' element={isLogin ? <DashBoard /> : <LoginPage  isLogin={isLogin}/>} />
       <Route path='/dashboard/create-post/' element={isLogin ? <CreatePost /> : <LoginPage  isLogin={isLogin}/>} />
@@ -112,7 +114,7 @@ function App() {
       <Route path='*' element={<NotFound />} />
       <Route path='/login/' element={<LoginPage isLogin={isLogin}/>} />
       <Route path='/register/' element={<RegisterPages  />} />
-      </Routes>
+    </Routes>
 
     </BrowserRouter>
 </AppContext.Provider>

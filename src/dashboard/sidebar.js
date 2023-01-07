@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
 
     return(
-        <aside class=" h-100 home-sidebar">
+        <aside class=" h-100 home-sidebar dashboard-sidebar">
         <div class="p-3 text-center mx-auto is-centered">
             <Link to='/' className='has-text-white is-title is-bold text-center'>View Site</Link>
         </div>
@@ -29,6 +29,24 @@ const Sidebar = () => {
             <Link to='/dashboard/posts/' class="has-icon">
                 <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
                 <span class="menu-item-label">Posts</span>
+            </Link>
+            </li>
+            <li>
+            <Link to='/dashboard/banner-setting/' class="has-icon">
+                <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
+                <span class="menu-item-label">Banner</span>
+            </Link>
+            </li>
+            <li>
+            <Link to='/dashboard/skills/' class="has-icon">
+                <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
+                <span class="menu-item-label">Skills</span>
+            </Link>
+            </li>
+            <li>
+            <Link to='/dashboard/works/' class="has-icon">
+                <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
+                <span class="menu-item-label">Project</span>
             </Link>
             </li>
             <li>

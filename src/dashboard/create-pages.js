@@ -52,9 +52,7 @@ const data = {
   isSave
 }
     return(
-<div id="app">
-<Header />
-<div class="container is-fluid my-5 ">
+<div class="container is-fluid my-5">
 <div className='columns is-multiline'>
 {/* START SIDEBAR */}
 <div className='column is-2  bg-dark'>
@@ -68,8 +66,6 @@ const data = {
 {/* END COLUMN RIGHT*/}
 </div>
 {/* end columns */}
-</div>
-{/* end container */}
 
 {/* modal */}
 <div class={modal ? "modal is-active" : "modal"}>

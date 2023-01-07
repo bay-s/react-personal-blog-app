@@ -9,6 +9,8 @@
     "@testing-library/user-event": "^13.5.0",
     "bulma-extensions": "^6.2.7",
     "font-awesome": "^4.7.0",
+    "fslightbox-react": "^1.6.2-2",
+    "particles-bg": "^2.5.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-quill": "^2.0.0",

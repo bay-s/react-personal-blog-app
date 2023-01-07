@@ -197,7 +197,7 @@ const PostEditor = (props) => {
   }  
     return(
         <div className='columns is-multiline'>
-<div className='column is-9  '>
+<div className='column is-9 p-0 px-4'>
 {/* START EDITOR*/}
 <section class="section is-main-section box bg-dark">
   <form className='is-flex is-flex-column is-flex-gap-md' onSubmit={createPost}>

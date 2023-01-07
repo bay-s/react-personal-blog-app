@@ -71,6 +71,7 @@ handlerChange = (e) => {
           sukses:true,
           pesan:"Login Sukses"
         })
+        window.location.href = '/dashboard/';
       }
  
 
@@ -86,13 +87,12 @@ render(){
   
   return(
     <>
- <Headers />
 {
   this.props.isLogin ? <Navigate to="/" replace={true} /> :
 <div className='container mt-5 pt-4 mx-auto'>
-            <div className='columns is-centered '>
-<div className='column is-6 box p-0 bg-dark shadow'>
-<div className='banner' style={banner}></div>
+     <div className='columns is-centered '>
+<div className='column is-6 box p-0 about'>
+<div className='banner-login card p-0' style={banner}></div>
 <LoginForm isSubmit={this.state.isSubmit} userLogin={this.userLogin} handlerChange={this.handlerChange}  sukses={this.state.sukses} error={this.state.error} pesan={this.state.pesan} />
 <div class="field is-flex justify-between p-3">
    <div className='is-flex is-flex-gap-md'>

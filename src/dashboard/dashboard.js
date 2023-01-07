@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { useParams ,Navigate} from 'react-router-dom';
-import Header from '../pages/header';
 import Category from './category';
 import Comment from './comment';
 import EditProfile from './edit-profile';
@@ -17,16 +16,16 @@ const {id} = useParams()
 const string_id = id.toString().toLowerCase()
 
     return( 
-<div id="app">
-<Header />
+<div id="dashboard" >
+{/* <Header /> */}
 <div class="container is-fluid my-5">
 <div className='columns is-multiline dashboard-container'>
 {/* START SIDEBAR */}
-<div className='column is-2 bg-dark'>
+<div className='column is-3 bg-dark'>
 <Sidebar />
 </div>
 {/* END SIDEBAR */}
-<div className='column is-10 p-0 px-3'>
+<div className='column is-9 p-0 px-3'>
 <div className={string_id === 'index' ? 'box bg-dark shadow' : 'hide' }>
 <h3 className='is-bold is-title is-size-4 text-title capital'>{string_id === 
 'index' ? "Dashboard" : string_id}</h3>
